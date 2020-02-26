@@ -232,7 +232,7 @@ Choose the local directories you'd like to share with your Linux containers. Fil
  not for Windows containers. For Linux containers, you need to share the drive
  where the Dockerfile and volume are located. Otherwise, you get `file not found` or `cannot start service` errors at runtime. See [Volume mounting requires shared drives for Linux containers](troubleshoot.md#volume-mounting-requires-shared-drives-for-linux-containers).
 
-**Apply & Restart** makes the directory available to containers using Docker's bind mount (`-v`) feature.
+Click **Apply & Restart** to ensure the directory is available to containers using Docker's bind mount (`-v`) feature.
 
 > Tips on shared drives, permissions, and volume mounts
 >
