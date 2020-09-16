@@ -6,6 +6,7 @@ redirect_from:
 - /engine/installation/binaries/
 - /engine/installation/linux/docker-ce/binaries/
 - /install/linux/docker-ce/binaries/
+- /installation/binaries/
 ---
 
 > **Note**: You may have been redirected to this page because there is no longer
@@ -18,7 +19,7 @@ system's package management system to manage Docker installation and upgrades.
 Be aware that 32-bit static binary archives do not include the Docker daemon.
 
 Static binaries for the Docker daemon binary are only available for Linux (as
-`dockerd`). 
+`dockerd`).
 Static binaries for the Docker client are available for Linux and macOS (as `docker`).
 
 This topic discusses binary installation for both Linux and macOS:
