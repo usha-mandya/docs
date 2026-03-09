@@ -13,7 +13,7 @@ convenience integration with limited features compared to the standalone
 sandbox CLI.
 
 > [!NOTE]
-> The standalone `ds` CLI provides more features, more flexibility, and doesn't
+> The standalone `sbx` CLI provides more features, more flexibility, and doesn't
 > require Docker Desktop. If you're setting up sandboxed agents for the first
 > time, consider using the standalone CLI instead.
 
@@ -47,16 +47,16 @@ Replace `claude` with a different [agent](#supported-agents) if needed.
 
 ## Supported agents
 
-| Agent                             | Command    | Notes                                |
-| --------------------------------- | ---------- | ------------------------------------ |
-| Claude Code                       | `claude`   | Most tested implementation           |
-| Codex                             | `codex`    |                                      |
-| Copilot                           | `copilot`  |                                      |
-| Gemini                            | `gemini`   |                                      |
-| [Docker Agent](/ai/docker-agent/) | `cagent`   | Also available as a standalone tool  |
-| Kiro                              | `kiro`     |                                      |
-| OpenCode                          | `opencode` |                                      |
-| Custom shell                      | `shell`    | Minimal environment for manual setup |
+| Agent                             | Command        | Notes                                |
+| --------------------------------- | -------------- | ------------------------------------ |
+| Claude Code                       | `claude`       | Most tested implementation           |
+| Codex                             | `codex`        |                                      |
+| Copilot                           | `copilot`      |                                      |
+| Gemini                            | `gemini`       |                                      |
+| [Docker Agent](/ai/docker-agent/) | `docker-agent` | Also available as a standalone tool  |
+| Kiro                              | `kiro`         |                                      |
+| OpenCode                          | `opencode`     |                                      |
+| Custom shell                      | `shell`        | Minimal environment for manual setup |
 
 All agents are experimental. The agent type is specified when creating a
 sandbox and can't be changed later.
@@ -110,9 +110,12 @@ $ docker sandbox run <name> -- --continue
 ## Architecture
 
 Each sandbox is a lightweight microVM with its own kernel, using your system's
-native virtualization (macOS virtualization.framework, Windows Hyper-V). Every
-sandbox includes a private Docker daemon, so `docker build` and
-`docker compose up` run inside the sandbox without affecting your host.
+native virtualization (macOS virtualization.framework, Windows Hyper-V). The
+default agent templates include a private Docker daemon, so `docker build` and
+`docker compose up` run inside the sandbox without affecting your host. On
+Windows, the Docker daemon is not included by default. See
+[Troubleshooting](troubleshooting.md#docker-not-available-inside-the-sandbox-on-windows)
+for a workaround.
 
 ```plaintext
 Host system

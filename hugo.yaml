@@ -30,6 +30,13 @@ cascade:
   - target:
       path: /reference/cli/docker/**
     layout: cli
+  # sbx CLI reference pages use the sbx-cli layout (cobra/doc YAML)
+  - target:
+      path: /reference/cli/sbx
+    layout: sbx-cli
+  - target:
+      path: /reference/cli/sbx/**
+    layout: sbx-cli
 
 # Remove the /manuals prefix for content in the manuals section
 permalinks:
