@@ -26,6 +26,39 @@ Docker Desktop versions older than 6 months from the latest release are not avai
 
 For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/releases.md).
 
+## 4.65.0
+
+{{< release-date date="2026-03-16" >}}
+
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.65.0" build_path="/221669/" >}}
+
+### New
+
+- Gordon hints now appear when `docker build`, `docker run`, or `docker compose` commands fail, offering contextual suggestions.
+- Community MCP servers now support OAuth authentication directly in the UI.
+- Added the `dhictl` CLI plugin for managing Docker Hardened Images.
+
+### Updates
+
+- [Docker Scout CLI v1.20.1](https://github.com/docker/scout-cli/releases/tag/v1.20.1)
+- [Docker Agent v1.29.0](https://github.com/docker/docker-agent/releases/tag/v1.29.0)
+- [Docker Buildx v0.32.1](https://github.com/docker/buildx/releases/tag/v0.32.1)
+
+### Bug fixes and minor changes
+
+#### For all platforms
+
+- Kubernetes now defaults to kind for new clusters.
+- Fixed update progress bar not resuming correctly.
+
+#### For Windows 
+
+- Improved startup time by skipping docker-users group check when using WSL2 backend.
+
+### Known issues
+
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+
 ## 4.64.0
 
 {{< release-date date="2026-03-11" >}}
@@ -36,7 +69,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 - [Docker Compose v5.1.0](https://github.com/docker/compose/releases/tag/v5.1.0)
 - [Docker Scout CLI v1.20.0](https://github.com/docker/scout-cli/releases/tag/v1.20.0)
-- [cagent v1.27.1](https://github.com/docker/cagent/releases/tag/v1.27.1)
+- [Docker Agent v1.27.1](https://github.com/docker/docker-agent/releases/tag/v1.27.1)
 
 ### Bug fixes and minor changes
 
@@ -46,7 +79,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 - Fixed the `docker ai` command stopping after a Docker Agent update.
 - Fixed Gordon session title flickering when hover buttons appeared.
 - Improved Gordon summary rendering and reduced narrative verbosity.
-- Fixed a bug where `docker ai` CLI commands did not correctly shell out to cagent.
+- Fixed a bug where `docker ai` CLI commands did not correctly shell out to Docker Agent.
 - Fixed the **OAuth** tab in Docker MCP Toolkit not showing entries from all catalogs.
 - Improved MCP Catalog search.
 - Fixed the **Build logs** tab not retaining search terms and filters when switching tabs.
@@ -56,6 +89,10 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 - Improved update error reporting with more descriptive diagnostics.
 - Improved update reliability by preparing the updated `Docker.app` under `Application Support` instead of `/tmp`.
+
+### Known issues
+
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
 
 ## 4.63.0
 
@@ -342,7 +379,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 - [containerd v2.2.1](https://github.com/containerd/containerd/releases/tag/v2.2.1)
 - [Docker Compose v5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0)
-- [cagent v1.18.6](https://github.com/docker/cagent/releases/tag/v1.18.6)
+- [Docker Agent v1.18.6](https://github.com/docker/docker-agent/releases/tag/v1.18.6)
 
 ### Bug fixes and enhancements
 
@@ -374,7 +411,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 ### Updates
 
 - [Docker Engine v29.1.3](https://docs.docker.com/engine/release-notes/29/#2913)
-- [cagent v1.15.1](https://github.com/docker/cagent/releases/tag/v1.15.1)
+- [Docker Agent v1.15.1](https://github.com/docker/docker-agent/releases/tag/v1.15.1)
 
 ### Bug fixes and enhancements
 
