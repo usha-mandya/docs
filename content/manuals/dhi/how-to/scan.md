@@ -157,9 +157,9 @@ name: DHI Vulnerability Scan
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ "**" ]
 
 env:
   REGISTRY: docker.io
@@ -173,13 +173,12 @@ jobs:
       contents: read
       packages: write
       pull-requests: write
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Set up Docker with containerd image store
-        uses: docker/setup-docker-action@v4
+        uses: docker/setup-docker-action@{{% param "setup_docker_action_version" %}}
         with:
           daemon-config: |
             {
@@ -188,22 +187,20 @@ jobs:
               }
             }
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@{{% param "setup_buildx_action_version" %}}
-
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@{{% param "login_action_version" %}}
         with:
+          registry: ${{ env.REGISTRY }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build Docker image
-        run: |
-          docker build \
-             --provenance=mode=max \
-             --sbom=true \
-             -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }} .
-
+      - name: Build
+        uses: docker/build-push-action@{{% param "build_push_action_version" %}}
+        with:
+          context: .
+          sbom: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }}
+      
       - name: Run Docker Scout CVE scan
         uses: docker/scout-action@v1
         with:
@@ -216,7 +213,6 @@ jobs:
         if: success()
         run: |
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }}
-
 ```
 
 The `exit-code: true` parameter ensures that the workflow fails if any critical or
