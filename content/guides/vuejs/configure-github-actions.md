@@ -158,7 +158,7 @@ jobs:
     steps:
       # 1. Checkout the codebase
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@{{% param "checkout_action_version" %}}
         with:
           fetch-depth: 0
 

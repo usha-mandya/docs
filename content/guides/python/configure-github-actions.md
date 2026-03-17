@@ -63,7 +63,7 @@ jobs:
   lint-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@{{% param "checkout_action_version" %}}
       
       - name: Set up Python
         uses: actions/setup-python@v5

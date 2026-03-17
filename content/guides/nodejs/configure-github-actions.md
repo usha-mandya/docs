@@ -175,7 +175,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@{{% param "checkout_action_version" %}}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@{{% param "setup_buildx_action_version" %}}
@@ -220,7 +220,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@{{% param "checkout_action_version" %}}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@{{% param "setup_buildx_action_version" %}}

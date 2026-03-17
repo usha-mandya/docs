@@ -62,7 +62,7 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@{{% param "checkout_action_version" %}}
       - uses: actions/setup-node@v4
         with:
           node-version: "18"
@@ -91,7 +91,7 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@{{% param "checkout_action_version" %}}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.8"

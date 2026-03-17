@@ -158,7 +158,7 @@ jobs:
     steps:
       # 1. Checkout source code
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@{{% param "checkout_action_version" %}}
         with:
           fetch-depth: 0 # Fetches full history for better caching/context
 
