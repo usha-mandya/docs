@@ -181,7 +181,7 @@ jobs:
         uses: docker/setup-buildx-action@{{% param "setup_buildx_action_version" %}}
 
       - name: Cache npm dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@{{% param "cache_action_version" %}}
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
@@ -226,7 +226,7 @@ jobs:
         uses: docker/setup-buildx-action@{{% param "setup_buildx_action_version" %}}
 
       - name: Cache Docker layers
-        uses: actions/cache@v4
+        uses: actions/cache@{{% param "cache_action_version" %}}
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
