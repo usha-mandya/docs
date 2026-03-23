@@ -13,18 +13,17 @@ params:
 
 {{< summary-bar feature_name="Desktop logs" >}}
 
-
-The **Logs** view provides a unified, real-time log stream from all running containers and Kubernetes nodes in Docker Desktop. Unlike the logs accessible from the [**Containers** view](container.md), the **Logs** view lets you monitor and search log output across your entire environment from a single interface. 
+The **Logs** view provides a unified, real-time log stream from all running containers and Kubernetes nodes in Docker Desktop. Unlike the logs accessible from the [**Containers** view](container.md), the **Logs** view lets you monitor and search log output across your entire environment from a single interface.
 
 ## Log entries
 
 Each log entry in the table view shows:
 
-| Column | Description |
-|---|---|
+| Column        | Description                                                                    |
+| ------------- | ------------------------------------------------------------------------------ |
 | **Timestamp** | The date and time the log line was emitted, for example `2026-02-26 11:18:53`. |
-| **Object** | The container or node that produced the log line. |
-| **Message** | The full log message, including any status codes such as `[ OK ]`. |
+| **Object**    | The container or node that produced the log line.                              |
+| **Message**   | The full log message, including any status codes such as `[ OK ]`.             |
 
 Selecting the expand arrow to the left of a row reveals the full message for that entry.
 
@@ -54,4 +53,4 @@ The table view is useful when you need to correlate events across multiple conta
 
 ## Feedback
 
-The Logs view is in active development. Select **Give feedback** at the top of the view to share suggestions or report issues.
+Select **Give feedback** at the top of the view to share suggestions or report issues.
