@@ -168,7 +168,7 @@ To view your current pull rate and limit:
 
 > [!NOTE]
 >
-> To check your limits, you need `curl`, `grep`, and `jq` installed.
+> To check your limits, you need `curl` and `jq` installed.
 
 1. Get a token.
    - To get a token anonymously, if you are pulling anonymously:
