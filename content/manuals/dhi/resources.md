@@ -6,7 +6,7 @@ weight: 999
 ---
 
 This page provides links to additional resources related to Docker Hardened
-Images (DHI), including blog posts, Docker Hub resources, and GitHub
+Images (DHI), including blog posts, guides, Docker Hub resources, and GitHub
 repositories.
 
 For product information and feature comparison, visit the [Docker Hardened
@@ -30,6 +30,11 @@ features, and announcements:
 | August 6, 2025 | [The Next Evolution of Docker Hardened Images: Customizable, FedRAMP Ready, AI Migration Agent, and Deeper Integrations](https://www.docker.com/blog/the-next-evolution-of-docker-hardened-images/) |
 | August 6, 2025 | [Accelerating FedRAMP Compliance with Docker Hardened Images](https://www.docker.com/blog/fedramp-compliance-with-hardened-images/) |
 | May 19, 2025 | [Introducing Docker Hardened Images: Secure, Minimal, and Ready for Production](https://www.docker.com/blog/introducing-docker-hardened-images/) |
+
+## Guides
+
+For guides that demonstrate how to use Docker Hardened Images in various
+scenarios, see the [guides section filtered by DHI](/guides/?tags=dhi).
 
 ## Docker Hub
 
