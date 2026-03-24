@@ -119,7 +119,7 @@ If you're using any third-party platforms, follow your provider’s instructions
 - [Artifactory](https://www.jfrog.com/confluence/display/JFROG/Advanced+Settings#AdvancedSettings-RemoteCredentials)
 - [AWS CodeBuild](https://aws.amazon.com/blogs/devops/how-to-use-docker-images-from-a-private-registry-in-aws-codebuild-for-your-build-environment/)
 - [AWS ECS/Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/private-auth.html)
-- [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#sep-docreg)
+- [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml)
 - [Chipper CI](https://docs.chipperci.com/builds/docker/#rate-limit-auth)
 - [CircleCI](https://circleci.com/docs/guides/execution-managed/private-images/)
 - [Codefresh](https://codefresh.io/docs/docs/docker-registries/external-docker-registries/docker-hub/)
