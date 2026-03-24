@@ -13,6 +13,14 @@ keywords: "API, Docker, rcli, REST, documentation"
      will be rejected.
 -->
 
+## v1.54 API changes
+
+* `GET /images/json` now supports an `identity` query parameter. When set,
+  the response includes manifest summaries and may include an `Identity` field
+  for each manifest with trusted identity and origin information.
+* `POST /networks/{id}/connect` now correctly applies the `MacAddress` field in
+  `EndpointSettings`. This field was added in API v1.44, but was previously ignored.
+
 ## v1.53 API changes
 
 * `GET /info` now includes an `NRI` field. If the Node Resource Interface (NRI)
