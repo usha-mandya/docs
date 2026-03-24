@@ -77,9 +77,8 @@ To customize a Docker Hardened Image using the web interface, follow these steps
 1. Select the image version you want to customize.
 1. Optional. Add packages.
 
-   1. In the packages drop-down (labeled **Hardened packages** for Alpine
-      distributions or **Packages** for Debian distributions), select the
-      packages you want to add to the image.
+   1. In the **Packages** drop-down, select the packages you want to add to the
+      image.
 
       The packages available in the drop-down are OS system packages for the
       selected image variant. For Alpine-based images, these are hardened
