@@ -5,8 +5,6 @@ on:
     types: [created]
   pull_request_review_comment:
     types: [created]
-  pull_request_target:
-    types: [ready_for_review, opened]
 
 permissions:
   contents: read
@@ -15,7 +13,7 @@ permissions:
 
 jobs:
   review:
-    uses: docker/cagent-action/.github/workflows/review-pr.yml@latest
+    uses: docker/cagent-action/.github/workflows/review-pr.yml@3a12dbd0c6cd7dda3d4e05f24f0143c9701456de # latest
     secrets: inherit
     with:
       add-prompt-files: STYLE.md,COMPONENTS.md

@@ -13,16 +13,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
 
       - name: Install dependencies
         run: npm ci
 
       - name: Run agent
-        uses: docker/cagent-action@latest
+        uses: docker/cagent-action@3a12dbd0c6cd7dda3d4e05f24f0143c9701456de # latest
         timeout-minutes: 15
         with:
           agent: ./tech_writer.yml
