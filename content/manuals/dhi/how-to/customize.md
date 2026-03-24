@@ -77,14 +77,15 @@ To customize a Docker Hardened Image using the web interface, follow these steps
 1. Select the image version you want to customize.
 1. Optional. Add packages.
 
-   1. In the **Packages** drop-down, select the packages you want to add to the
+   1. In the packages drop-down, select the packages you want to add to the
       image.
 
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For Alpine-based images, these are hardened
-      packages that have been built from source by Docker with cryptographic
-      signatures and full supply chain security. For Debian-based images,
-      these are standard Debian system packages.
+      selected image variant. For version 3.23 Alpine-based images, these are
+      hardened packages that have been built from source by Docker with
+      cryptographic signatures and full supply chain security. For version 3.22
+      Alpine-based images and Debian-based images, these are standard system
+      packages.
 
    1. In the **OCI artifacts** drop-down, first, select the repository that
       contains the OCI artifact image. Then, select the tag you want to use from
