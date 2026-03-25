@@ -77,7 +77,6 @@ organization using Settings Management.
 Available controls:
 
 - Enable or disable Gordon for the organization
-- Set usage limits by subscription tier
 
 Administrators should review their organization's data handling requirements
 before enabling Gordon.

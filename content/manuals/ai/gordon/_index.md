@@ -116,13 +116,3 @@ Image management:
 ```console
 $ docker ai "list my local images and their sizes"
 ```
-
-## Usage and availability
-
-Gordon is available with all Docker subscriptions. Usage limits vary by tier:
-
-- Personal: Baseline usage
-- Pro and Team: 3x more usage than Personal
-- Business: 6x more usage than Personal
-
-For details, see [Usage and limits](./usage-and-limits/).
