@@ -52,7 +52,7 @@ These are the 21 guides from testcontainers.com/guides/ and their source repos:
 | 20 | Getting started for Python | tc-guide-getting-started-with-testcontainers-for-python | python | getting-started |
 | 21 | Keycloak with Spring Boot | tc-guide-securing-spring-boot-microservice-using-keycloak-and-testcontainers | java | keycloak-spring-boot |
 
-Already migrated: **#13 (Go getting-started)**, **#20 (Python getting-started)**
+Already migrated: **#2 (Java getting-started)**, **#13 (Go getting-started)**, **#20 (Python getting-started)**
 
 ## Step 0: Pre-flight
 
@@ -137,8 +137,9 @@ For each language, check the cloned repo's existing code, then update to the lat
 - No `TearDownSuite()` needed if `CleanupContainer` is registered in the helper
 - Go version prerequisite: 1.25+
 
-**Java** (testcontainers-java):
-- Check the latest BOM version at https://java.testcontainers.org/
+**Java** (testcontainers-java 2.0.4):
+- Artifacts renamed in 2.x: `org.testcontainers:postgresql` → `org.testcontainers:testcontainers-postgresql`
+- Check the latest version at https://java.testcontainers.org/
 - Use `@Testcontainers` and `@Container` annotations for JUnit 5 lifecycle
 - Prefer module-specific containers (e.g. `PostgreSQLContainer`) over `GenericContainer`
 - Use `@DynamicPropertySource` for Spring Boot integration
@@ -246,17 +247,90 @@ If compilation fails, fix the code and update the guide markdown to match.
 
 ### 6d: Run tests in a container with Docker socket mounted
 
-Run tests in the same kind of container, but **mount the Docker socket** so Testcontainers can create sibling containers:
+Run tests in the same kind of container, but **mount the Docker socket** so Testcontainers can create sibling containers.
+
+#### macOS Docker Desktop workarounds
+
+When running on macOS with Docker Desktop, these environment variables and flags are **required**:
+
+- **`TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal`** — On macOS, containers can't reach sibling containers via the Docker bridge IP (`172.17.0.x`). This tells Testcontainers (including Ryuk) to connect via `host.docker.internal` instead. **Do NOT disable Ryuk** — it is a core Testcontainers feature and the guides must demonstrate proper usage.
+- **`docker-java.properties`** with `api.version=1.47` — Docker Desktop's minimum API version is 1.44, but docker-java defaults to 1.24. Create this file in the project root and mount it to `/root/.docker-java.properties` inside Java containers.
+- **`-Dspotless.check.skip=true`** — The Spotless Maven plugin in the source repos is incompatible with JDK 21. Skip it since it's a code formatter, not part of the test.
+- **`-Dmicronaut.test.resources.enabled=false`** — Micronaut's Test Resources service starts a separate process that can't connect to Docker from inside a container. The guide tests use Testcontainers directly, not Test Resources. Only needed for Micronaut guides.
+#### Java guide test command
+
+```bash
+# Create docker-java.properties in the project root
+echo "api.version=1.47" > <tmpdir>/{REPO_NAME}/docker-java.properties
+
+docker run --rm \
+  -v "<tmpdir>/{REPO_NAME}":/app \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "<tmpdir>/{REPO_NAME}/docker-java.properties":/root/.docker-java.properties \
+  -e DOCKER_HOST=unix:///var/run/docker.sock \
+  -e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
+  -w /app \
+  maven:3.9-eclipse-temurin-21 \
+  mvn -B test -Dspotless.check.skip=true -Dspotless.apply.skip=true
+```
+
+For Quarkus guides, use `maven:3.9-eclipse-temurin-17` instead (Quarkus 3.22.3 compiles for Java 17).
+
+#### Go guide test command
 
 ```bash
 docker run --rm \
   -v "<tmpdir>/{REPO_NAME}":/app \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -w /app <language-image> \
-  sh -c "<test command>"
+  -e DOCKER_HOST=unix:///var/run/docker.sock \
+  -e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
+  -w /app \
+  golang:1.25-alpine \
+  sh -c "apk add --no-cache gcc musl-dev && go test -v -count=1 ./..."
 ```
 
-The key is `-v /var/run/docker.sock:/var/run/docker.sock` — this lets Testcontainers inside the container talk to the host's Docker daemon and create sibling containers.
+#### Python guide test command
+
+```bash
+docker run --rm \
+  -v "<tmpdir>/{REPO_NAME}":/app \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e DOCKER_HOST=unix:///var/run/docker.sock \
+  -e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
+  -w /app \
+  python:3.13-slim \
+  sh -c "pip install -r requirements.txt && python -m pytest"
+```
+
+#### .NET guide test command
+
+```bash
+docker run --rm \
+  -v "<tmpdir>/{REPO_NAME}":/app \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e DOCKER_HOST=unix:///var/run/docker.sock \
+  -e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
+  -w /app \
+  mcr.microsoft.com/dotnet/sdk:9.0 \
+  dotnet test
+```
+
+#### Node.js guide test command
+
+```bash
+docker run --rm \
+  -v "<tmpdir>/{REPO_NAME}":/app \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e DOCKER_HOST=unix:///var/run/docker.sock \
+  -e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
+  -w /app \
+  node:22-alpine \
+  sh -c "npm install && npm test"
+```
+
+#### Important: run tests sequentially
+
+Run guide tests **one at a time**. Running multiple concurrent DinD or sibling-container tests can overwhelm Docker Desktop's containerd store and cause `meta.db: input/output error` corruption, requiring a Docker Desktop restart.
 
 ### 6e: Fix until green
 
@@ -274,11 +348,23 @@ If any test fails, debug and fix the code in both the temporary project AND the 
 
 ## Step 8: Validate
 
+**IMPORTANT**: Run ALL validation locally before committing. Vale checks run on CI and will block the PR if they fail — fixing after push wastes CI cycles and review time.
+
 1. `npx prettier --write content/guides/testcontainers-{LANG}-{GUIDE_ID}/`
 2. `npx prettier --write content/manuals/testcontainers.md`
-3. `docker buildx bake lint` — must pass
-4. `docker buildx bake vale` — check `tmp/vale.out` for errors in new files
-   - Spelling errors for tech terms: add to `_vale/config/vocabularies/Docker/accept.txt`
+3. `docker buildx bake lint` — must pass with no errors
+4. `docker buildx bake vale` — then check for errors in the new files:
+   ```bash
+   grep -A2 "testcontainers-{LANG}-{GUIDE_ID}" tmp/vale.out
+   ```
+   Fix ALL errors before proceeding. Common issues:
+   - **Vale.Spelling**: tech terms (library names, tools) not in the dictionary → add to `_vale/config/vocabularies/Docker/accept.txt` (alphabetical order)
+   - **Vale.Terms**: wrong casing (e.g. "python" → "Python") → fix in the markdown. Watch for package names like `testcontainers-python` triggering false positives — rephrase to "Testcontainers for Python" in prose.
+   - **Docker.Avoid**: hedge words like "very", "simply" → reword
+   - **Docker.We**: first-person plural → rewrite to "you" or imperative
+   - Info-level suggestions (e.g. "VS Code" → "versus") are not blocking but review them
+
+   Re-run `docker buildx bake vale` after fixes until no errors remain in the new files.
 5. Verify in local dev server (`HUGO_PORT=1314 docker compose watch`):
    - Guide appears when filtering by its language
    - Guide appears when filtering by `Testing with Docker` tag

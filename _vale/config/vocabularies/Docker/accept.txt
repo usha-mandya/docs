@@ -8,6 +8,7 @@ exfiltration
 sandboxing
 Adreno
 Aleksandrov
+Awaitility
 Amazon
 Anchore
 Apple
@@ -36,6 +37,7 @@ Chrome DevTools
 CI
 CI/CD
 Citrix
+classpath
 cli
 CLI
 CloudFront
@@ -48,13 +50,14 @@ CouchDB
 Crowdstrike
 [Cc]ybersecurity
 datacenter
+datasource
 Datadog
 Ddosify
 Debootstrap
 denylist
 deprovisioning
 deserialization
-deserialize
+deserialize[d]?
 Dev
 Dev Environments?
 Dex
@@ -96,6 +99,7 @@ Git
 GitHub
 GitHub Actions
 Google
+Gradle
 Grafana
 Gravatar
 gRPC
@@ -103,6 +107,8 @@ Groq
 Grype
 HyperKit
 inferencing
+initializer
+Initializr
 inotify
 Intel
 Intune
@@ -117,6 +123,7 @@ JetBrains
 JFrog
 JUnit
 Kata
+Keycloak
 Kerberos
 Kiro
 Kitematic
@@ -129,7 +136,9 @@ Laradock
 Laravel
 libseccomp
 Linux
+Liquibase
 LinuxKit
+logback
 Loggly
 Logstash
 lookup
@@ -138,8 +147,10 @@ macOS
 macvlan
 Mail(chimp|gun)
 mfsymlinks
+Micronaut
 Microsoft
 minikube
+misconfiguration
 monorepos?
 musl
 MySQL
@@ -147,6 +158,7 @@ nameserver
 namespaced?
 namespacing
 Neovim
+Npgsql
 netfilter
 netlabel
 netlink
@@ -222,14 +234,18 @@ Traefik
 Trivy
 Trixie
 Turtlesim
+typesafe
 Ubuntu
 ufw
 umask
 uncaptured
 Uncaptured
+unconfigured
 undeterminable
 Unix
+unmarshalling
 unmanaged
+upsert
 Visual Studio Code
 VMware
 vpnkit
@@ -244,6 +260,7 @@ WireMock
 workdir
 WORKDIR
 Xdebug
+xUnit
 XQuartz
 youki
 Yubikey
