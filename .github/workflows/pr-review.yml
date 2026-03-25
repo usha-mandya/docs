@@ -1,3 +1,10 @@
+# Thin wrapper around docker/cagent-action's reusable review workflow.
+# Fork detection, org-membership gating, and review posting are all handled
+# by the reusable workflow, so no additional guards are needed here.
+#
+# Triggers:
+#   issue_comment               — `/review` slash command (works for fork contributors).
+#   pull_request_review_comment — captures feedback for agent learning.
 name: PR Review
 
 on:
@@ -8,13 +15,20 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
-  issues: write
 
 jobs:
   review:
-    uses: docker/cagent-action/.github/workflows/review-pr.yml@3a12dbd0c6cd7dda3d4e05f24f0143c9701456de # latest
-    secrets: inherit
+    uses: docker/cagent-action/.github/workflows/review-pr.yml@dba0ca51938c78afb363625363c50582243218d6 # v1.3.1
+    permissions:
+      contents: read # Read repo files and PR diffs
+      pull-requests: write # Post review comments, approve / request changes
+      issues: write # Create security-incident issues if secrets leak into output
+      checks: write # Show review progress as a check run on the PR
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CAGENT_ORG_MEMBERSHIP_TOKEN: ${{ secrets.CAGENT_ORG_MEMBERSHIP_TOKEN }}
+      CAGENT_REVIEWER_APP_ID: ${{ secrets.CAGENT_REVIEWER_APP_ID }}
+      CAGENT_REVIEWER_APP_PRIVATE_KEY: ${{ secrets.CAGENT_REVIEWER_APP_PRIVATE_KEY }}
     with:
       add-prompt-files: STYLE.md,COMPONENTS.md
       additional-prompt: |
