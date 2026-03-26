@@ -14,7 +14,7 @@ This page explains the build process for both base DHI images and customized
 images available with DHI Select and DHI Enterprise subscriptions.
 
 With DHI Select or DHI Enterprise subscriptions, the automated security update pipeline for
-both base and customized images is backed by SLA commitments, including a 7-day
+both base and customized images is backed by [SLA commitments](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf), including a 7-day
 SLA for critical and high severity vulnerabilities. DHI Community offers a secure baseline
 but no guaranteed remediation timelines.
 
@@ -131,8 +131,8 @@ Docker responds quickly to critical vulnerabilities. By building essential
 components from source rather than waiting for packaged updates, Docker can
 patch critical and high severity CVEs within days of upstream fixes and publish
 updated images with new attestations. For DHI Enterprise subscriptions, this
-rapid response is backed by a 7-day SLA for critical and high severity
-vulnerabilities.
+rapid response is backed by a [7-day SLA for critical and high severity
+vulnerabilities](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf).
 
 The following diagram shows the base image build flow:
 

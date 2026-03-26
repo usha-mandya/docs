@@ -122,6 +122,8 @@ comparison](https://www.docker.com/products/hardened-images/#compare).
 - Continuous patching: Regular security updates backed by SLA commitments
 - Enterprise support: Access to Docker's support team for mission-critical applications
 
+For complete details, see the [Support Service Level Agreement](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf).
+
 ### Compliance variants {tier="DHI Select & DHI Enterprise"}
 
 - FIPS-enabled images: For regulated industries and government systems

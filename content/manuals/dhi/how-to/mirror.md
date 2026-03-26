@@ -16,7 +16,7 @@ mirroring. With a DHI Select or Enterprise subscription, you must mirror to get:
 - Extended Lifecycle Support (ELS) variants (requires add-on)
 - Image or Helm chart customization
 - Air-gapped or restricted network environments
-- SLA-backed security updates
+- [SLA-backed security updates](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf)
 
 ## How to mirror
 
