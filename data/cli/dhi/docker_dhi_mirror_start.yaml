@@ -15,12 +15,12 @@ long: |-
 
     Examples:
       # These are all equivalent (assuming --org myorg):
-      dhictl mirror start --org myorg -r dhi/golang,myorg/dhi-golang
-      dhictl mirror start --org myorg -r golang,dhi-golang
-      dhictl mirror start --org myorg -r golang
+      docker dhi mirror start --org myorg -r dhi/golang,myorg/dhi-golang
+      docker dhi mirror start --org myorg -r golang,dhi-golang
+      docker dhi mirror start --org myorg -r golang
 
       # Mirror multiple repositories
-      dhictl mirror start --org myorg -r golang -r python
+      docker dhi mirror start --org myorg -r golang -r python
 usage: docker dhi mirror start
 pname: docker dhi mirror
 plink: docker_dhi_mirror.yaml
