@@ -15,6 +15,10 @@ use local models for coding tasks. You'll configure an `opencode.json` file,
 verify the API endpoint, and run OpenCode against models served from your local
 Docker environment.
 
+> **Acknowledgment**
+>
+> Docker would like to thank [Pradumna Saraf](https://twitter.com/pradumna_saraf) for his contribution to this guide.
+
 Unlike the [OpenCode sandbox guide](../manuals/ai/sandboxes/agents/opencode.md),
 this guide focuses on using OpenCode as a local coding tool backed by Docker
 Model Runner rather than running OpenCode in a containerized sandbox.

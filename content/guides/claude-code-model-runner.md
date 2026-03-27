@@ -15,6 +15,10 @@ model provider. You'll point Claude Code at the local Anthropic-compatible API,
 run a coding model, and package `gpt-oss` with a larger context window for
 longer repository prompts.
 
+> **Acknowledgment**
+>
+> Docker would like to thank [Pradumna Saraf](https://twitter.com/pradumna_saraf) for his contribution to this guide.
+
 In this guide, you'll learn how to:
 
 - Pull a coding model and start Claude Code with Docker Model Runner
