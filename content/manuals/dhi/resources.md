@@ -70,7 +70,7 @@ organization:
 - [Start a free trial](https://hub.docker.com/hardened-images/start-free-trial):
   Explore DHI Select and Enterprise features including FIPS/STIG variants, customization,
   and SLA-backed support
-- [Support Service Level Agreement](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf):
+- [Support Service Level Agreement](https://docs.docker.com/go/dhi-sla/):
   Review the SLA commitments for DHI Select and Enterprise subscriptions
 - [Request a demo](https://www.docker.com/products/hardened-images/#getstarted): Get a
   personalized demo and information about DHI Select and Enterprise subscriptions

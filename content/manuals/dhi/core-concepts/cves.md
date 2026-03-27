@@ -41,7 +41,7 @@ CVE mitigation:
   95% smaller than traditional images, limits the number of potential
   vulnerabilities, making it harder for attackers to exploit unneeded software.
 
-- Faster CVE remediation: Maintained by Docker with an [enterprise-grade SLA](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf),
+- Faster CVE remediation: Maintained by Docker with an [enterprise-grade SLA](https://docs.docker.com/go/dhi-sla/),
   DHIs are continuously updated to address known vulnerabilities. Critical and
   high-severity CVEs are patched quickly, ensuring that your containers remain
   secure without manual intervention.

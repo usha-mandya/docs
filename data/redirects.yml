@@ -402,6 +402,11 @@
 "/dhi/how-to/customize/#create-an-oci-artifact-image":
   - /go/dhi-customization-artifacts/
 
+"https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf":
+  # External redirect to DHI Support SLA PDF. Internal redirect prevents GA4
+  # from adding _gl cross-domain tracking parameters that break the PDF link.
+  - /go/dhi-sla/
+
 # Copilot extension (deprecated)
 "https://github.com/marketplace/docker-for-github-copilot":
   - /copilot/

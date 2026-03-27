@@ -48,5 +48,5 @@ following features:
 
 - Continuous maintenance and rapid CVE remediation: Docker maintains DHIs with
   regular updates and security patches, backed by an [SLA for addressing critical
-  and high-severity vulnerabilities](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf). This proactive approach helps ensure that
+  and high-severity vulnerabilities](https://docs.docker.com/go/dhi-sla/). This proactive approach helps ensure that
   images remain secure and compliant with enterprise standards.
