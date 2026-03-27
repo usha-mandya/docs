@@ -1,5 +1,5 @@
 ---
-title: 'Manage Docker Hardened Images and charts <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: Manage Docker Hardened Images and charts
 linktitle: Manage images and charts
 description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
 keywords: manage docker hardened images, custom hardened images

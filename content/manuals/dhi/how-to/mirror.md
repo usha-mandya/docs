@@ -1,5 +1,5 @@
 ---
-title: 'Mirror a Docker Hardened Image repository <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: Mirror a Docker Hardened Image repository
 linktitle: Mirror a repository
 description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
 weight: 20

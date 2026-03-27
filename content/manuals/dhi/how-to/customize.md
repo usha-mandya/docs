@@ -1,5 +1,5 @@
 ---
-title: 'Customize a Docker Hardened Image or chart <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Select & Enterprise</span>'
+title: Customize a Docker Hardened Image or chart
 linkTitle: Customize an image or chart
 weight: 25
 keywords: hardened images, DHI, customize, certificate, artifact, helm chart
