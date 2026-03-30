@@ -9,6 +9,10 @@ params:
       icon: travel_explore
       link: /dhi/how-to/explore/
   grid_adopt:
+    - title: Get started with DHI Select and Enterprise
+      description: Learn how to mirror repositories, customize images, and access compliance variants with DHI Select and Enterprise subscriptions.
+      icon: rocket_launch
+      link: /dhi/how-to/select-enterprise/
     - title: Use the DHI CLI
       description: Use the dhictl command-line tool to manage and interact with Docker Hardened Images.
       icon: terminal
