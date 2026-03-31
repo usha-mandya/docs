@@ -367,7 +367,7 @@ synonyms, and paraphrasing.
 #### Semantic-embeddings
 
 LLM-enhanced semantic search. Uses a language model to generate rich semantic
-summaries of each chunk before embedding, capturing deeper meaning.
+summaries of each chunk before embedding, capturing deeper meaning. Best for complex documents where context and relationships between concepts matter.
 
 | Field                              | Type    | Default |
 | ---------------------------------- | ------- | ------- |
