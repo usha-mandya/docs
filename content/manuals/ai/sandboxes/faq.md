@@ -1,0 +1,104 @@
+---
+title: FAQ
+weight: 70
+description: Frequently asked questions about Docker Sandboxes.
+---
+
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
+
+## Why do I need to sign in?
+
+Docker Sandboxes is built around the idea that you and your agents are a team.
+Signing in gives each sandbox a verified identity, which lets Docker:
+
+- **Tie sandboxes to a real person.** Governance matters when agents can build
+  containers, install packages, and push code. Your Docker identity is the
+  anchor.
+- **Enable team features down the road.** Shared environments, org-level
+  policies, audit logs. These all need a concept of "who," and building that in
+  later would be worse for everyone.
+- **Authenticate against Docker infrastructure.** Sandboxes pull images, run
+  daemons, and talk to Docker services. A Docker account makes that seamless.
+
+Your Docker account email is only used for authentication, not marketing.
+
+## Does the CLI collect telemetry?
+
+The `sbx` CLI collects basic usage data about CLI invocations:
+
+- Which subcommand you ran
+- Whether it succeeded or failed
+- How long it took
+- If you're signed in, your Docker username is included
+
+Docker Sandboxes doesn't monitor sessions, read your prompts, or access your
+code. Your code stays in the sandbox and on your host.
+
+To opt out of all analytics, set the `SBX_NO_TELEMETRY` environment variable:
+
+```console
+$ export SBX_NO_TELEMETRY=1
+```
+
+## How do I set custom environment variables inside a sandbox?
+
+The [`sbx secret`](/reference/cli/sbx/secret/) command only supports a fixed set
+of [services](security/credentials.md#supported-services) (Anthropic, OpenAI,
+GitHub, and others). If your agent needs an environment variable that isn't
+tied to a supported service, such as `BRAVE_API_KEY` or a custom internal
+token, write it to `/etc/sandbox-persistent.sh` inside the sandbox. This
+file is sourced on every shell login, so the variable persists across agent
+sessions for the sandbox's lifetime.
+
+Use `sbx exec` to append the export:
+
+```console
+$ sbx exec -d <sandbox-name> bash -c "echo 'export BRAVE_API_KEY=your_key' >> /etc/sandbox-persistent.sh"
+```
+
+The `bash -c` wrapper is required so the `>>` redirect runs inside the
+sandbox instead of on your host.
+
+> [!NOTE]
+> Unlike `sbx secret`, which injects credentials through a host-side proxy
+> without exposing them to the agent, this approach stores the value inside
+> the sandbox. The agent process can read it directly. Only use this for
+> credentials where proxy-based injection isn't available.
+
+To verify the variable is set, open a shell in the sandbox:
+
+```console
+$ sbx exec -it <sandbox-name> bash
+$ echo $BRAVE_API_KEY
+```
+
+## How do I know if my agent is running in a sandbox?
+
+Ask the agent. The agent can see whether or not it's running inside a sandbox.
+In Claude Code, use the `/btw` slash command to ask without interrupting an
+in-progress task:
+
+```text
+/btw are you running in a sandbox?
+```
+
+## Why doesn't the sandbox use my user-level agent configuration?
+
+Sandboxes don't pick up user-level agent configuration from your host. This
+includes directories like `~/.claude` for Claude Code or `~/.codex` for Codex,
+where hooks, skills, and other settings are stored. Only project-level
+configuration in the working directory is available inside the sandbox.
+
+To make configuration available in a sandbox, copy or move what you need into
+your project directory before starting a session:
+
+```console
+$ cp -r ~/.claude/skills .claude/skills
+```
+
+Don't use symlinks — a sandboxed agent can't follow symlinks to paths outside
+the sandbox.
+
+Collocating skills and other agent configuration with the project itself is a
+good practice regardless of sandboxes. It's versioned alongside the code and
+evolves with the project as it changes.

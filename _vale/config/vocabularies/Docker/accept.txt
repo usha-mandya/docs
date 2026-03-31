@@ -237,6 +237,7 @@ Turtlesim
 typesafe
 Ubuntu
 ufw
+uv
 umask
 uncaptured
 Uncaptured
@@ -259,6 +260,9 @@ windowsfilter
 WireMock
 workdir
 WORKDIR
+[Ww]orktrees?
+[Pp]assthrough
+[Pp]reconfigured
 Xdebug
 xUnit
 XQuartz
