@@ -56,7 +56,7 @@ If credentials are configured correctly but API calls still fail, check
 the `transparent` proxy don't get credential injection. This can happen when a
 client inside the sandbox (such as a process in a Docker container) isn't
 configured to use the forward proxy. See
-[Monitoring network activity](security/policy.md#monitoring-network-activity)
+[Monitoring network activity](security/policy.md#monitoring)
 for details.
 
 ## Docker not available inside the sandbox on Windows
@@ -83,6 +83,7 @@ an unprivileged user without `CAP_CHOWN`, so the operation is denied.
 Use the tar exporter and extract the archive instead:
 
 ```console
+$ mkdir -p ./result
 $ docker build --output type=tar,dest=- . | tar xf - -C ./result
 ```
 

@@ -9,8 +9,8 @@ weight: 80
 
 Docker Desktop includes a built-in sandbox feature for running AI coding
 agents in isolated microVMs using the `docker sandbox` command. This is a
-convenience integration with limited features compared to the standalone
-sandbox CLI.
+convenience integration. For full functionality, use the standalone `sbx`
+CLI instead.
 
 > [!NOTE]
 > The standalone `sbx` CLI provides more features, more flexibility, and doesn't
@@ -112,10 +112,7 @@ $ docker sandbox run <name> -- --continue
 Each sandbox is a lightweight microVM with its own kernel, using your system's
 native virtualization (macOS virtualization.framework, Windows Hyper-V). The
 default agent templates include a private Docker daemon, so `docker build` and
-`docker compose up` run inside the sandbox without affecting your host. On
-Windows, the Docker daemon is not included by default. See
-[Troubleshooting](troubleshooting.md#docker-not-available-inside-the-sandbox-on-windows)
-for a workaround.
+`docker compose up` run inside the sandbox without affecting your host.
 
 ```plaintext
 Host system
