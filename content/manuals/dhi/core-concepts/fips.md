@@ -51,6 +51,9 @@ compliance requirements by incorporating components that meet the standard.
 - Docker provides signed test attestations that document the use of validated
   cryptographic modules. These attestations can support internal audits and
   compliance reporting.
+- Entropy sources (random number generation for cryptographic operations) vary
+  by base image. Debian-based images use the OpenSSL entropy source, while
+  Alpine-based images source entropy from the host kernel.
 
 > [!NOTE]
 >
