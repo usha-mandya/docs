@@ -62,7 +62,7 @@ For information about metadata stored by Docker Scout, see [Data handling](/manu
 
 ## How are Marketplace extensions vetted for security?
 
-Security vetting for extensions is on the roadmap but isn't currently implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
+Security vetting for extensions isn't implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
 
 ## Can I prevent users from pushing images to Docker Hub private repositories?
 
