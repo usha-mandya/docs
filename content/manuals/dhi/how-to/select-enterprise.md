@@ -14,14 +14,15 @@ customize images, and get SLA-backed updates.
 
 ## Prerequisites
 
-To use this workflow, you need organization owner access in your Docker Hub
-namespace, and one of the following:
+To use this workflow, you need:
 
-- A DHI Select or Enterprise subscription. [Contact Docker
-  sales](https://www.docker.com/products/hardened-images/#compare) to purchase
-  or learn more about these subscriptions.
-- An active DHI trial. [Start a free DHI
-  trial](https://hub.docker.com/hardened-images/start-free-trial).
+- Organization owner access in your Docker Hub namespace.
+- One of the following:
+  - A DHI Select or Enterprise subscription. [Contact Docker
+    sales](https://www.docker.com/products/hardened-images/#compare) to purchase
+    or learn more about these subscriptions.
+  - An active DHI trial. [Start a free DHI
+    trial](https://hub.docker.com/hardened-images/start-free-trial).
 - [Docker Desktop](../../desktop/release-notes.md) 4.65 or later to use the
   `docker dhi` CLI.
 
