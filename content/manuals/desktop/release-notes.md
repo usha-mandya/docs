@@ -105,6 +105,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 #### For Windows
 
 - Fixed high CPU usage in the Windows API proxy caused by unnecessary process enumeration.
+- Fixed the Windows MSI installer failing to update Docker Desktop. Versions between 4.56 and 4.65 need to uninstall before reinstalling version 4.66 or later. Note that uninstalling removes all associated data.
 
 ## 4.65.0
 
@@ -138,7 +139,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 ### Known issues
 
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data.
 
 ## 4.64.0
 
@@ -173,7 +174,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 ### Known issues
 
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
 
 ## 4.63.0
 
@@ -205,7 +206,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 ### Known issues
 
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
 
 ## 4.62.0
 
@@ -242,7 +243,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 ### Known issues
 
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data.
 
 ## 4.61.0
 
@@ -275,7 +276,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 ### Known issues
 
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data.
 
 ## 4.60.1
 
@@ -314,7 +315,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 ### Known issues
 
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
 
 ## 4.59.1
 
