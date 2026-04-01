@@ -19,9 +19,10 @@ Policies can be set at two levels:
 - **Local policies** — configured by individual users with the `sbx policy`
   command. These apply to all sandboxes on the local machine.
 
-If your organization has enabled governance, organization policies take
-precedence over local rules and can't be overridden locally. See
-[Precedence](#precedence) for the full evaluation model.
+If your organization has enabled governance, organization policies replace
+local rules — local `sbx policy` rules are not evaluated unless an admin
+also turns on the **User defined** setting. See [Precedence](#precedence)
+for details.
 
 ## Organization policies {tier="Limited Access"}
 
@@ -34,18 +35,30 @@ Organization admins can centrally manage policies through the
 organization settings and enable **Manage AI governance**.
 
 Once enabled, the policies defined in the Admin Console apply to all
-sandboxes across the organization, regardless of any local policies
-configured with `sbx policy`.
+sandboxes across the organization.
 
 ### Local extensions to organization policy
 
-Organization policy is the baseline for all sandboxes in your organization.
-Admins can optionally permit users to extend it locally by enabling the
-**User defined** setting in AI governance settings. When enabled, users can
-add hosts to the allowlist from their own machine using `sbx policy allow network`.
+When organization governance is active, local rules are ignored by default.
+Admins can optionally let users extend the organization policy by turning on
+the **User defined** setting in AI governance settings. When turned on,
+local `sbx policy` rules are evaluated alongside organization rules, letting
+users add hosts to the allowlist from their own machine using
+`sbx policy allow network`.
 
-Local extensions can only expand access within what the organization permits.
-They can't override organization-level deny rules.
+Local extensions can expand access for domains the organization hasn't
+explicitly denied, but can't override organization-level deny rules. This
+applies to exact matches and wildcard matches alike — if the organization
+denies `*.example.com`, a local allow for `api.example.com` has no effect
+because the org-level wildcard deny covers it.
+
+For example, given an organization policy that allows `api.anthropic.com`
+and denies `*.corp.internal`:
+
+- `sbx policy allow network api.example.com` — works, because the
+  organization hasn't denied `api.example.com`
+- `sbx policy allow network build.corp.internal` — no effect, because the
+  organization denies `*.corp.internal`
 
 ## Network policies
 
@@ -75,6 +88,11 @@ Choose a default network policy:
 
 You can change your effective policy at any time using `sbx policy allow` and
 `sbx policy deny`, or start over by running `sbx policy reset`.
+
+> [!NOTE]
+> If your organization manages AI governance policies, organization rules
+> take precedence over the policy you select here. See
+> [Organization policies](#organization-policies).
 
 ### Non-interactive environments
 
@@ -257,18 +275,20 @@ Each rule takes a path pattern and an action (allow or deny).
 Within any layer, deny rules beat allow rules — if a domain matches both,
 it's blocked regardless of specificity.
 
-Docker Sandboxes ships with a baseline allowlist (the default policies). Local
-`sbx policy` rules add to this baseline. The full evaluation order when
-organization policies are enabled:
+All outbound traffic is blocked by default unless an explicit rule allows it.
+How rules are evaluated depends on whether organization governance is active.
 
-1. **Organization policies** (Docker Admin Console) — highest precedence.
-   Organization admins can modify or replace the default allowlist and define
-   their own rules. Organization-level denials can't be overridden locally.
-2. **Local extensions** — if the admin has enabled the **User defined**
-   setting, users can add allow rules with `sbx policy allow network`. These
-   can only expand access within what the organization permits.
-3. **Local rules** (`sbx policy`) — lowest precedence. Can't override
-   organization-level denials.
+Without organization governance, local rules (`sbx policy`) are the only
+rules evaluated against this default-deny baseline.
+
+With organization governance, local rules are not evaluated. Only
+organization rules (Docker Admin Console) determine what is allowed or
+denied. Organization-level denials can't be overridden locally.
+
+If the admin turns on the **User defined** setting, local rules are also
+evaluated alongside organization rules. Local rules can expand access for
+domains the organization hasn't explicitly denied, but can't override
+organization-level denials.
 
 The same model applies to filesystem policies: organization-level rules take
 precedence over local behavior.
