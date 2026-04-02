@@ -60,6 +60,17 @@ and denies `*.corp.internal`:
 - `sbx policy allow network build.corp.internal` — no effect, because the
   organization denies `*.corp.internal`
 
+#### Blocked values in user-defined rules
+
+To prevent overly broad rules from undermining the organization's policy,
+certain catch-all values are blocked in user-defined rules:
+
+- Domain patterns: `*`, `**`, `*.com`, `**.com`, `*.*`, `**.**`
+- CIDR ranges: `0.0.0.0/0`, `::/0`
+
+Scoped wildcards like `*.example.com` are still allowed. If you attempt to
+use a blocked value, `sbx policy` returns an error immediately.
+
 ## Network policies
 
 The only way traffic can leave a sandbox is through an HTTP/HTTPS proxy on
