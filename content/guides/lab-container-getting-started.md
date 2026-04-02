@@ -43,7 +43,7 @@ By the end of this Labspace, you will have completed the following:
 | #   | Module                    | Description                                                                    |
 | --- | ------------------------- | ------------------------------------------------------------------------------ |
 | 1   | Welcome to Docker         | Introduction to containers and running your first `hello-world` container      |
-| 2   | Running Containers        | Launch nginx, inspect logs and internals, and manage the container lifecycle   |
+| 2   | Running Containers        | Launch Nginx, inspect logs and internals, and manage the container lifecycle   |
 | 3   | Building Your First Image | Write a `Dockerfile` and build a custom image from a Node.js app               |
 | 4   | Running Your App          | Run your image, explore container isolation, and optionally push to Docker Hub |
 | 5   | Wrap-up                   | Summary of key concepts and next steps                                         |

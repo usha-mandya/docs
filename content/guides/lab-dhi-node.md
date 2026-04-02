@@ -15,7 +15,7 @@ params:
   time: 30 minutes
   resource_links:
     - title: Docker Hardened Images
-      url: /docker-hub/hardened-images/
+      url: /dhi/
     - title: Docker Scout docs
       url: /scout/
     - title: Build attestations
@@ -48,7 +48,7 @@ By the end of this Labspace, you will have completed the following:
 | #   | Module                                   | Description                                                                     |
 | --- | ---------------------------------------- | ------------------------------------------------------------------------------- |
 | 1   | Introduction                             | Overview of Docker Hardened Images and their security benefits                  |
-| 2   | Setup                                    | Configure Docker login, DHI tier selection, and Docker Scout org                |
+| 2   | Setup                                    | Perform setup tasks required for the lab.                                       |
 | 3   | Analyzing the Starting Image             | Build the app, scan it with Docker Scout, and review failing policies           |
 | 4   | Migrating to DHI                         | Rewrite the Dockerfile with multi-stage DHI build and compare results           |
 | 5   | DHI Attestations and Scanner Integration | Inspect SBOMs, FIPS attestations, STIG scans, and export VEX for external tools |

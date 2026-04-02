@@ -39,7 +39,7 @@ By the end of this Labspace, you will have completed the following:
 - Write integration tests that spin up a real database using Testcontainers
 - Build a CI/CD pipeline that tests, builds, and pushes a container image automatically
 - Write Kubernetes manifests and deploy a live application to a k3s cluster
-- Automate deployments so every push to `main` triggers a rollout
+- Configure the pipeline to cause an automatic deployment on every push to `main`
 
 ## Modules
 
