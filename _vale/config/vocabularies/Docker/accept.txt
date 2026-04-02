@@ -96,6 +96,7 @@ g?libc
 GeoNetwork
 GGUF
 Git
+Gitea
 GitHub
 GitHub Actions
 Google
