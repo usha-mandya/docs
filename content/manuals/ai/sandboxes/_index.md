@@ -63,6 +63,13 @@ the [usage guide](usage.md) for common patterns.
 - [Troubleshooting](troubleshooting.md) — common issues and fixes
 - [FAQ](faq.md) — login requirements, telemetry, etc
 
+## Feedback
+
+Docker Sandboxes is experimental and under active development. Your feedback
+shapes what gets built next. If you run into a bug, hit a missing feature, or
+have a suggestion, open an issue at
+[github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
+
 ## Docker Desktop integration
 
 Docker Desktop also includes a [built-in sandbox command](docker-desktop.md)
