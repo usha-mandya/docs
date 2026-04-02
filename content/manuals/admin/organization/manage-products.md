@@ -106,8 +106,7 @@ select **Account**.
 
 > [!NOTE]
 >
-> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [sign
-> up](https://www.docker.com/products/docker-offload/) and subscribe.
+> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [contact sales](https://www.docker.com/products/docker-offload/) and subscribe.
 
 To manage Docker Offload access for your organization, use [Settings
 Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md):
