@@ -136,3 +136,8 @@ Windows:
 ```powershell
 > Remove-Item -Recurse -Force "$env:LOCALAPPDATA\DockerSandboxes"
 ```
+
+## Report an issue
+
+If you've exhausted the steps above and the problem persists, file a GitHub
+issue at [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).

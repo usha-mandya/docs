@@ -49,6 +49,9 @@ $ sbx login
 {{< /tab >}}
 {{< /tabs >}}
 
+If you need to install `sbx` manually, download a binary directly from the
+[sbx-releases](https://github.com/docker/sbx-releases/releases) repository.
+
 `sbx login` opens a browser for Docker OAuth. On first login (and after `sbx
 policy reset`), the CLI prompts you to choose a default network policy for your
 sandboxes:
