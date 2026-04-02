@@ -58,7 +58,7 @@ Docker Hardened Images that include STIG scan results are labeled as **STIG** in
 the Docker Hardened Images catalog.
 
 To find DHI repositories with STIG image variants, [explore
-images](../how-to/explore.md) and:
+images](../how-to/explore.md#image-variants) and:
 
 - Use the **STIG** filter on the catalog page
 - Look for **STIG** labels on individual image listings

@@ -72,7 +72,7 @@ can use either interface.
 {{< /tabs >}}
 
 Continue to the next step to mirror the image. To dive deeper into exploring
-images see [Explore Docker Hardened Images](explore.md).
+images see [Search and evaluate Docker Hardened Images](explore.md).
 
 ## Step 2: Mirror the repository
 

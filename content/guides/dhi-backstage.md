@@ -479,5 +479,5 @@ Different scanners detect different issues. Running all three gives you the most
 - [Create and build a DHI](/dhi/how-to/build/) — learn how to write a DHI definition file, build images locally.
 - [Use the DHI CLI](/dhi/how-to/cli/) — manage DHI images, mirrors, and customizations from the command line.
 - [Migrate to DHI](/dhi/migration/) — for applications that work with standard DHI images without additional packages.
-- [Compare images](/dhi/how-to/compare/) — evaluate security improvements between your original and hardened images.
+- [Compare images](/dhi/how-to/explore/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
 - [Docker Debug](/dhi/how-to/debug/) — troubleshoot distroless containers that have no shell.

@@ -59,7 +59,7 @@ use a `-dev` tag if you need a shell or package manager during build stages:
 FROM dhi.io/python:3.13-dev AS build
 ```
 
-To learn how to explore available variants, see [Explore images](./explore.md).
+To learn how to search for available variants, see [Search and evaluate images](./explore.md).
 
 > [!TIP]
 >

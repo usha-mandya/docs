@@ -4,7 +4,7 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 weight: 20
 params:
   grid_discover:
-    - title: Explore Docker Hardened Images
+    - title: Search and evaluate Docker Hardened Images
       description: Learn how to find and evaluate image repositories, variants, metadata, and attestations in the DHI catalog on Docker Hub.
       icon: travel_explore
       link: /dhi/how-to/explore/
@@ -49,11 +49,6 @@ params:
       description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
       icon: reorder
       link: /dhi/how-to/manage/
-  grid_evaluate:
-    - title: Compare Docker Hardened Images
-      description: Learn how to compare Docker Hardened Images with other container images to evaluate security improvements and differences.
-      icon: compare
-      link: /dhi/how-to/compare/
   grid_verify:
     - title: Verify a Docker Hardened Image or chart
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
@@ -99,14 +94,6 @@ Mirror trusted images, customize as needed, and integrate into your workflows.
 
 {{< grid
   items="grid_adopt"
->}}
-
-## Evaluate
-
-Compare with other images to understand security improvements.
-
-{{< grid
-  items="grid_evaluate"
 >}}
 
 ## Verify

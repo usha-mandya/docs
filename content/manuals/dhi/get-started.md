@@ -30,8 +30,8 @@ Docker account, pull and run an image, and compare it with a Docker Official Ima
    `node`, or `golang`). For this example, search for `python`.
 3. Select the Python repository to view its details.
 
-Continue to the next step to pull and run the image. To dive deeper into exploring
-images see [Explore Docker Hardened Images](./how-to/explore.md).
+Continue to the next step to pull and run the image. To dive deeper into searching
+and evaluating images, see [Search and evaluate Docker Hardened Images](./how-to/explore.md).
 
 ## Step 2: Pull and run the image
 
@@ -131,7 +131,7 @@ This comparison shows that the Docker Hardened Image:
 - Reduces size: From 412 MB down to 35 MB (91% reduction)
 - Minimizes packages: From 610 packages down to 80 (87% reduction)
 
-To dive deeper into comparing images see [Compare Docker Hardened Images](./how-to/compare.md).
+To dive deeper into comparing images see [Search and evaluate Docker Hardened Images](./how-to/explore.md#compare-and-evaluate-images).
 
 ## What's next
 

@@ -66,7 +66,7 @@ compliance requirements by incorporating components that meet the standard.
 Docker Hardened Images that support FIPS are marked as **FIPS** compliant
 in the Docker Hardened Images catalog.
 
-To find DHI repositories with FIPS image variants, [explore images](../how-to/explore.md) and:
+To find DHI repositories with FIPS image variants, [search the catalog](../how-to/explore.md) and:
 
 - Use the **FIPS** filter on the catalog page
 - Look for **FIPS** compliant on individual image listings
