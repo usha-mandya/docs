@@ -298,6 +298,26 @@ A few things to keep in mind:
   must use `--unpublish 8080:3000`. Run `sbx ports my-sandbox` first if you
   used an ephemeral port and need to find the assigned host port.
 
+## Accessing host services from a sandbox
+
+Services running on your host are reachable from inside a sandbox using the
+hostname `host.docker.internal`.
+Use this instead of `127.0.0.1` or your machine's local network IP address,
+which are not routable from inside the sandbox.
+
+You must also add `host.docker.internal` to your network policy allowlist:
+
+```console
+$ sbx policy allow network host.docker.internal
+```
+
+Then use `host.docker.internal` in any configuration or request that points at
+the host service. For example, to verify connectivity from a sandbox shell:
+
+```console
+$ curl http://host.docker.internal:11434
+```
+
 ## What persists
 
 While a sandbox exists, installed packages, Docker images, configuration

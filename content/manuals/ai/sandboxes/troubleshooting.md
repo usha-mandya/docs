@@ -34,6 +34,12 @@ To allow all outbound traffic instead:
 $ sbx policy allow network "**"
 ```
 
+## Can't reach a service running on the host
+
+If a request to `127.0.0.1` or a local network IP returns "connection refused"
+from inside a sandbox, the address is not routable from within the sandbox VM.
+See [Accessing host services from a sandbox](usage.md#accessing-host-services-from-a-sandbox).
+
 ## Docker authentication failure
 
 If you see a message like `You are not authenticated to Docker`, your login
