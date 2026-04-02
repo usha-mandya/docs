@@ -305,10 +305,12 @@ hostname `host.docker.internal`.
 Use this instead of `127.0.0.1` or your machine's local network IP address,
 which are not routable from inside the sandbox.
 
-You must also add `host.docker.internal` to your network policy allowlist:
+The sandbox proxy translates `host.docker.internal` to `localhost` before
+forwarding the request, so you must add the `localhost` address with the
+specific port to your network policy allowlist:
 
 ```console
-$ sbx policy allow network host.docker.internal
+$ sbx policy allow network localhost:11434
 ```
 
 Then use `host.docker.internal` in any configuration or request that points at
