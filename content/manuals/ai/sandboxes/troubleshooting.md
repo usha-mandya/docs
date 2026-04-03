@@ -65,20 +65,6 @@ configured to use the forward proxy. See
 [Monitoring network activity](security/policy.md#monitoring)
 for details.
 
-## Docker not available inside the sandbox on Windows
-
-On Windows, sandboxes use non-docker template variants by default, so `docker`
-commands aren't available inside the sandbox. To use Docker inside a sandbox on
-Windows, specify a `-docker` template:
-
-```console
-$ sbx run --template docker.io/docker/sandbox-templates:claude-code-docker claude
-```
-
-The `-docker` variants work on Windows but have slower startup times. See
-[Base images](agents/custom-environments.md#base-images) for details and the
-full list of templates.
-
 ## Docker build export fails with "lchown: operation not permitted"
 
 Running `docker build` with the local exporter (`--output=type=local` or `-o

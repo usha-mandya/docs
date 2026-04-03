@@ -84,19 +84,17 @@ CLI, and common development tools like Node.js, Python, Go, and Java.
 | `opencode`            | [OpenCode](https://opencode.ai)                                      |
 | `shell`               | No agent pre-installed. Use for manual agent setup.                  |
 
-Each variant also has a `-docker` version (for example,
-`claude-code-docker`) that includes a full Docker Engine running inside the
-sandbox — no local Docker daemon required. The `-docker` variants are the
-defaults used by `sbx run` on macOS and Linux. These variants run in
-privileged mode inside the microVM (not on your host), with a dedicated block
-volume at `/var/lib/docker`, and `dockerd` starts automatically inside the
-sandbox.
+Each variant also has a `-docker` version (for example, `claude-code-docker`)
+that includes a full Docker Engine running inside the sandbox — no local Docker
+daemon required. When you pick a built-in agent without specifying a custom
+template, `sbx run` and `sbx create` use the `-docker` template variants by
+default.
 
-The block volume defaults to 50 GB and uses a sparse file, so it only
-consumes disk space as Docker writes to it. On Windows, the volume is not
-sparse and the full 50 GB is allocated at creation time, which increases
-startup time. For this reason, the non-docker variants are the default on
-Windows.
+The agent containers created from the `-docker` templates run in privileged
+mode inside the microVM (not on your host), with a dedicated block volume at
+`/var/lib/docker`, and `dockerd` starts automatically inside the sandbox. The
+block volume defaults to 50 GB and uses a sparse file, so it only consumes disk
+space as Docker writes to it.
 
 To override the volume size, set the `DOCKER_SANDBOXES_DOCKER_SIZE`
 environment variable to a size string before starting the sandbox:
