@@ -371,7 +371,7 @@ Docker Hardened Image by pulling the image and running the scan command:
 ```console
 $ docker login dhi.io
 $ docker pull dhi.io/<image>:<tag>
-$ wiz docker scan --image dhi.io/<image>:<tag>
+$ wizcli scan container-image dhi.io/<image>:<tag>
 ```
 
 ## Export VEX attestations
