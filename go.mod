@@ -3,7 +3,7 @@ module github.com/docker/docs
 go 1.26.0
 
 // This go.mod file is used by hugo to vendor documentation from upstream
-// reposities. Use the "require" section to specify the version of the
+// repositories. Use the "require" section to specify the version of the
 // upstream repository.
 //
 // Make sure to add an entry in the "tools" section when adding a new repository.
