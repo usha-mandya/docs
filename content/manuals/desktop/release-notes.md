@@ -46,7 +46,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 #### For all platforms
 
 - Fixed a deadlock in Enhanced Container Isolation that caused containers to hang indefinitely during creation when ECI was enabled.
-- Added a warning banner to alert when an MCP erver is community-provided and has not been verified by Docker.
+- Added a warning banner to alert when an MCP server is community-provided and has not been verified by Docker.
 - Added a persistent **Show timestamps** toggle to the **Logs** view, allowing timestamps to be hidden in both table and visualiser views across sessions.
 - Fixed an issue where Docker Desktop frontend processes were not properly terminated on quit.
 - Fixed a deadlock when settings controlled by admins reload that could cause Docker Desktop to become unresponsive during sign in or sign out operations.
