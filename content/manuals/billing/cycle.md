@@ -25,8 +25,6 @@ When you change your billing cycle:
   and you're used value is $5, when you switch to an annual cycle ($100), the
   final charge is $95 ($100-$5).
 
-{{% include "tax-compliance.md" %}}
-
 ## Change personal account to an annual cycle
 
 {{< tabs >}}

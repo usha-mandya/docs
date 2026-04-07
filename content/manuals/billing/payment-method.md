@@ -29,8 +29,6 @@ Certain payment methods require additional steps before selecting them as a paym
 * You must have a Docker Business or Docker Team plan to [pay by invoice](/billing/payment-method/#enable-and-disable-pay-by-invoice).
 * You must be an existing Stripe Link customer, or fill out the card information form to use Link payments.
 
-{{% include "tax-compliance.md" %}}
-
 ## Manage payment method
 
 Paid personal accounts and organizations follow the same procedures to add, update, or remove payment methods. 

@@ -9,8 +9,6 @@ Docker subscriptions provide features and benefits for individual developers, te
 
 Before you begin, make sure you have a [Docker ID](../accounts/create-account.md). To learn more about what's included in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionSetup).
 
-{{% include "tax-compliance.md" %}}
-
 ## Set up a Docker subscription for a personal account
 
 When you [create your Docker ID](../accounts/create-account.md), you automatically get a Docker Personal subscription. This subscription includes essential Docker tools at no cost. If you want to continue with Docker Personal, no further action is needed. You can start using Docker Desktop, Docker Hub, and other tools immediately.

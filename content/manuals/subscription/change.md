@@ -18,8 +18,6 @@ weight: 30
 
 You can upgrade or downgrade your Docker subscription at any time to match your changing needs. This page explains how to make subscription changes and what to expect with billing and feature access.
 
-{{% include "tax-compliance.md" %}}
-
 ## Upgrade your subscription
 
 When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier. 

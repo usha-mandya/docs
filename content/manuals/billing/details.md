@@ -13,9 +13,7 @@ where Docker sends all invoices and other billing related communications.
 > [!NOTE]
 >
 > Existing invoices, whether paid or unpaid, cannot be updated.
-Changes only apply to future invoices.
-
-{{% include "tax-compliance.md" %}}
+> Changes only apply to future invoices.
 
 ## Manage billing information
 

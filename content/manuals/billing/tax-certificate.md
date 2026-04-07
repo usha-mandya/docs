@@ -12,8 +12,6 @@ If you're a global customer subject to VAT, make sure to include your
 [VAT number](/billing/history/#include-your-vat-number-on-your-invoice)
 along with your country prefix when you update your billing profile.
 
-{{% include "tax-compliance.md" %}}
-
 ## Prerequisites
 
 Before submitting your certificate:

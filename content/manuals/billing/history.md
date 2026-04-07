@@ -12,8 +12,6 @@ your billing renewal date. All monthly and annual subscriptions are
 automatically renewed at the end of the subscription term using your default
 payment method.
 
-{{% include "tax-compliance.md" %}}
-
 ## View an invoice
 
 Your invoice includes the following:
