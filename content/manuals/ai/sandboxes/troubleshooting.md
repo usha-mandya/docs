@@ -93,6 +93,28 @@ $ git worktree remove .sbx/<sandbox-name>-worktrees/<branch-name>
 $ git branch -D <branch-name>
 ```
 
+## Signed Git commits
+
+Agents inside a sandbox can't sign commits because signing keys (GPG, SSH)
+aren't available in the sandbox environment. Commits created by an agent are
+unsigned.
+
+If your repository or organization requires signed commits, use one of these
+workarounds:
+
+- **Commit outside the sandbox.** Let the agent make changes without
+  committing, then commit and sign from your host terminal.
+
+- **Sign after the fact.** Let the agent commit inside the sandbox, then
+  re-sign the commits on your host:
+
+  ```console
+  $ git rebase --exec 'git commit --amend --no-edit -S' origin/main
+  ```
+
+  This replays each commit on the branch and re-signs it with your local
+  signing key.
+
 ## Clock drift after sleep/wake
 
 If your laptop sleeps and wakes while a sandbox is running, the VM clock can
