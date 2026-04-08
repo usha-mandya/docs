@@ -108,7 +108,10 @@ agents:
 
       ## What not to file
 
-      - **Broken links** — htmltest catches these; do not file
+      - **Broken links** — htmltest catches these; do not file. This includes
+        links to non-existent files within the repo ("broken cross-reference"
+        is still a broken link). Only file if the URL resolves but the
+        surrounding prose misdescribes the destination.
       - **Single time-relative words** in otherwise accurate sentences —
         "currently", "recently", "still", "yet", "usually" — Vale already flags
         these; your job is to find problems Vale can't see
