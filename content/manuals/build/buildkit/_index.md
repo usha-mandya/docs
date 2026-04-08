@@ -5,14 +5,10 @@ description: Introduction and overview of BuildKit
 keywords: build, buildkit
 ---
 
-## Overview
-
-[BuildKit](https://github.com/moby/buildkit)
-is an improved backend to replace the legacy builder. BuildKit is the default builder
-for users on Docker Desktop, and Docker Engine as of version 23.0.
-
-BuildKit provides improved functionality and improves your builds' performance.
-It also introduces support for handling more complex scenarios:
+[BuildKit](https://github.com/moby/buildkit) is the builder backend used by
+Docker. BuildKit provides improved functionality and improves your builds'
+performance over the legacy builder used in earlier versions of Docker. It also
+introduces support for handling more complex scenarios:
 
 - Detect and skip executing unused build stages
 - Parallelize building independent build stages
@@ -72,39 +68,8 @@ BuildKit, you would
 
 ## Getting started
 
-BuildKit is the default builder for users on Docker Desktop and Docker Engine
-v23.0 and later.
-
-If you have installed Docker Desktop, you don't need to enable BuildKit. If you
-are running a version of Docker Engine version earlier than 23.0, you can enable
-BuildKit either by setting an environment variable, or by making BuildKit the
-default setting in the daemon configuration.
-
-To set the BuildKit environment variable when running the `docker build`
-command, run:
-
-```console
-$ DOCKER_BUILDKIT=1 docker build .
-```
-
-> [!NOTE]
->
-> Buildx always uses BuildKit.
-
-To use Docker BuildKit by default, edit the Docker daemon configuration in
-`/etc/docker/daemon.json` as follows, and restart the daemon.
-
-```json
-{
-  "features": {
-    "buildkit": true
-  }
-}
-```
-
-If the `/etc/docker/daemon.json` file doesn't exist, create new file called
-`daemon.json` and then add the following to the file. And restart the Docker
-daemon.
+BuildKit is the default builder for Docker Desktop and Docker Engine users.
+If you're building Windows containers, the legacy builder is used instead.
 
 ## BuildKit on Windows
 
