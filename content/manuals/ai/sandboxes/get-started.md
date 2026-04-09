@@ -19,12 +19,15 @@ cleaning up.
 
 ## Prerequisites
 
-- macOS (Apple silicon) or Windows (x86_64, Windows 11 required)
+- macOS (Apple silicon), Windows (x86_64, Windows 11 required), or Linux
+  (Ubuntu 22.04 or later, x86_64)
 - If you're on Windows, enable Windows Hypervisor Platform. Open an elevated
   PowerShell prompt (Run as Administrator) and run:
   ```powershell
   Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
   ```
+- If you're on Linux, your user must be in the `kvm` group for hardware
+  virtualization access.
 - An API key or authentication method for the agent you want to use. Most
   agents require an API key for their model provider (Anthropic, OpenAI,
   Google, and others). See the [agent pages](agents/) for provider-specific
@@ -49,6 +52,22 @@ $ sbx login
 > winget install -h Docker.sbx
 > sbx login
 ```
+
+{{< /tab >}}
+{{< tab name="Linux (Ubuntu)" >}}
+
+```console
+$ curl -fsSL https://get.docker.com | sudo REPO_ONLY=1 sh
+$ sudo apt-get install docker-sbx
+$ sudo usermod -aG kvm $USER
+$ newgrp kvm
+$ sbx login
+```
+
+The first command adds Docker's `apt` repository to your system. The
+`usermod` command grants your user access to `/dev/kvm` for hardware
+virtualization. You need to log out and back in (or use `newgrp`) for the
+group change to take effect.
 
 {{< /tab >}}
 {{< /tabs >}}
