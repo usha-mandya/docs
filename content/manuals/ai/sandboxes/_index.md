@@ -38,6 +38,17 @@ $ sbx login
 ```
 
 {{< /tab >}}
+{{< tab name="Linux (Ubuntu)" >}}
+
+```console
+$ curl -fsSL https://get.docker.com | sudo REPO_ONLY=1 sh
+$ sudo apt-get install docker-sbx
+$ sudo usermod -aG kvm $USER
+$ newgrp kvm
+$ sbx login
+```
+
+{{< /tab >}}
 {{< /tabs >}}
 
 Then launch an agent in a sandbox:
