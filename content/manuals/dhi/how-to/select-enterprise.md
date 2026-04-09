@@ -231,7 +231,6 @@ image from your organization namespace on Docker Hub.
 To dive deeper into using images, see:
 
 - [Use a Docker Hardened Image](use.md) for general usage
-- [Use in Kubernetes](k8s.md) for Kubernetes deployments
 - [Use a Helm chart](helm.md) for deploying with Helm
 
 ## Step 5: Remove customization and stop mirroring

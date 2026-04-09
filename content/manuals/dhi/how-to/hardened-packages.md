@@ -1,7 +1,7 @@
 ---
 title: Use Hardened System Packages
 linkTitle: Use hardened packages
-weight: 30
+weight: 32
 keywords: hardened images, DHI, hardened packages, packages, alpine
 description: Learn how to use and verify Docker's hardened system packages in your images.
 ---

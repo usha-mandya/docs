@@ -74,7 +74,6 @@ a simple Python command just like you would with any other Docker image:
 To dive deeper into using images, see:
 
 - [Use a Docker Hardened Image](./how-to/use.md) for general usage
-- [Use in Kubernetes](./how-to/k8s.md) for Kubernetes deployments
 - [Use a Helm chart](./how-to/helm.md) for deploying with Helm
 
 ## Step 3: Compare with other images
