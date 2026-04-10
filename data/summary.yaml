@@ -153,7 +153,7 @@ Docker CLI OpenTelemetry:
   requires: Docker Engine [26.1.0](/manuals/engine/release-notes/26.1.md#2610) and later
 Docker Offload:
   subscription: [Docker Offload]
-  requires: Docker Desktop 4.65 and later
+  requires: Docker Desktop 4.68 or later
 docker compose alpha:
   availability: Experimental
 Docker Debug:
