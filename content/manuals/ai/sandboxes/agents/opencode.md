@@ -64,6 +64,20 @@ OpenCode uses a TUI interface and doesn't require extensive configuration
 files. The agent prompts you to select a provider when it starts, and you can
 switch providers during a session.
 
+### Pass options at runtime
+
+Pass OpenCode CLI options after `--`:
+
+```console
+$ sbx run opencode --name <sandbox-name> -- <opencode-options>
+```
+
+For example, to resume an existing session in a named sandbox:
+
+```console
+$ sbx run <sandbox-name> -- -s <session-id>
+```
+
 ### TUI mode
 
 OpenCode launches in TUI mode by default. The interface shows:
