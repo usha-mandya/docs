@@ -114,7 +114,7 @@ Note that the cgroup v2 mode behaves slightly different from the cgroup v1 mode:
 
 - The default cgroup driver (`dockerd --exec-opt native.cgroupdriver`) is `systemd` on v2, `cgroupfs` on v1.
 - The default cgroup namespace mode (`docker run --cgroupns`) is `private` on v2, `host` on v1.
-- The `docker run` flags `--oom-kill-disable` and `--kernel-memory` are discarded on v2.
+- The `docker run` flag `--oom-kill-disable` is discarded on v2.
 
 ### Find the cgroup for a given container
 
