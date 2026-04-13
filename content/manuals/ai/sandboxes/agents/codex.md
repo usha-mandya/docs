@@ -30,7 +30,9 @@ $ sbx run codex
 
 ## Authentication
 
-Codex requires an OpenAI API key. Store your key using
+Codex supports two authentication methods: an API key or OAuth.
+
+**API key**: Store your OpenAI API key using
 [stored secrets](../security/credentials.md#stored-secrets):
 
 ```console
@@ -38,8 +40,20 @@ $ sbx secret set -g openai
 ```
 
 Alternatively, export the `OPENAI_API_KEY` environment variable in your shell
-before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
+before running the sandbox.
+
+**OAuth**: If you prefer not to use an API key, start the OAuth flow on your
+host with:
+
+```console
+$ sbx secret set -g openai --oauth
+```
+
+This opens a browser window for authentication and stores the resulting tokens
+in your OS keychain. The OAuth flow runs on the host, not inside the sandbox,
+so browser-based authentication works without any extra setup.
+
+See [Credentials](../security/credentials.md) for more details.
 
 ## Configuration
 
