@@ -55,8 +55,6 @@ on participation tier:
   with Docker Scout
 - [Priority search ranking](#priority-search-ranking): Enhanced discoverability
   in Docker Hub search results
-- [Removal of rate limiting](#removal-of-rate-limiting): Unrestricted pulls for
-  development teams
 - [Co-marketing opportunities](#co-marketing-opportunities): Joint promotional
   activities with Docker
 
@@ -118,20 +116,6 @@ Verified publisher images receive enhanced visibility in Docker Hub search
 results, making it easier for developers to discover your content. This improved
 discoverability helps drive adoption of your images within the developer
 community.
-
-### Removal of rate limiting
-
-Verified publisher images are exempt from standard [Docker Hub rate
-limits](../../../usage/_index.md), ensuring developers can pull your images
-without restrictions. **This applies to all users, including unauthenticated users**,
-who get unlimited pulls for DVP images. This eliminates potential barriers to adoption and
-provides a seamless experience for users of your content.
-
-DVP partners can verify this unlimited access by checking the absence of rate
-limiting headers when pulling their images. When pulling DVP images, users won't
-see `ratelimit-limit` or `ratelimit-remaining` headers, indicating unlimited
-access. For more details on checking rate limits, see [View pull rate and
-limit](../../../usage/pulls.md#view-pull-rate-and-limit).
 
 ### Co-marketing opportunities
 
