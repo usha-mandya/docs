@@ -1651,6 +1651,10 @@ in the form:
 - `CONTAINER` is `port | range`.
 - `PROTOCOL` restricts ports to a specified protocol either `tcp` or `udp`(optional). Default is `tcp`.
 
+> [!WARNING]
+>
+> If you do not specify a host IP (such as `127.0.0.1`), Docker binds to all interfaces (`0.0.0.0`), bypassing host firewall rules. This can expose the container directly to the internet if the host has a public IP address. For more information, see [Port publishing and mapping](/manuals/engine/network/port-publishing.md).
+
 Ports can be either a single value or a range. `HOST` and `CONTAINER` must use equivalent ranges.
 
 You can either specify both ports (`HOST:CONTAINER`), or just the container port. In the latter case,
@@ -1658,6 +1662,8 @@ the container runtime automatically allocates any unassigned port of the host.
 
 `HOST:CONTAINER` should always be specified as a (quoted) string, to avoid conflicts
 with [YAML base-60 float](https://yaml.org/type/float.html).
+
+
 
 IPv6 addresses can be enclosed in square brackets.
 
