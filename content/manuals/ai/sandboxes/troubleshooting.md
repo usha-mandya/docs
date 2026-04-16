@@ -139,17 +139,38 @@ As a last resort, if `sbx reset` doesn't resolve your issue, you can remove the
 `sbx` state directory entirely. This deletes all sandbox data, configuration, and
 cached images. Stop all running sandboxes first with `sbx reset`.
 
-macOS:
+{{< tabs >}}
+{{< tab name="macOS" >}}
 
 ```console
 $ rm -rf ~/Library/Application\ Support/com.docker.sandboxes/
 ```
 
-Windows:
+{{< /tab >}}
+{{< tab name="Windows" >}}
 
 ```powershell
 > Remove-Item -Recurse -Force "$env:LOCALAPPDATA\DockerSandboxes"
 ```
+
+{{< /tab >}}
+{{< tab name="Linux" >}}
+
+Sandbox state on Linux follows the XDG Base Directory specification and is
+spread across three directories:
+
+```console
+$ rm -rf ~/.local/state/sandboxes/
+$ rm -rf ~/.cache/sandboxes/
+$ rm -rf ~/.config/sandboxes/
+```
+
+If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
+`XDG_CONFIG_HOME` environment variables, replace `~/.local/state`,
+`~/.cache`, and `~/.config` with the corresponding values.
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Report an issue
 
