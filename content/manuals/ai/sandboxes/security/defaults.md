@@ -7,8 +7,8 @@ description: What a sandbox permits and blocks before you change any settings.
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 
-A sandbox created with `sbx run` and no additional flags or blueprints has
-the following security posture.
+A sandbox created with `sbx run` and no additional flags has the following
+security posture.
 
 ## Network defaults
 
