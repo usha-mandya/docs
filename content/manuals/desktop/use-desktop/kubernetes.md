@@ -24,7 +24,7 @@ With Docker Desktop version 4.51 and later, you can manage Kubernetes directly f
 3. Choose your cluster type:
    - **Kubeadm** creates a single-node cluster and the version is set by Docker Desktop.
    - **kind** creates a multi-node cluster and you can set the version and number of nodes.
-   For more detailed information on each cluster type, see [Cluster provisioining method](#cluster-provisioning-method).
+   For more detailed information on each cluster type, see [Cluster provisioning method](#cluster-provisioning-method).
 4. Optional: Select **Show system containers (advanced)** to view internal containers when using Docker commands.
 5. Select **Create**. 
 
@@ -38,7 +38,7 @@ The following actions are also triggered in the Docker Desktop backend and VM:
 
 - Generation of certificates and cluster configuration
 - Download and installation of Kubernetes internal components
-- Cluster bootup
+- Cluster boot-up
 - Installation of additional controllers for networking and storage
 
 When Kubernetes is enabled, its status is displayed in the Docker Desktop Dashboard footer and the Docker menu.

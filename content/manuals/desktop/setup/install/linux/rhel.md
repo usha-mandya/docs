@@ -14,7 +14,7 @@ aliases:
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
 > employees or more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
+> subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopRhelInstall).
 
 This page contains information on how to install, launch and upgrade Docker Desktop on a Red Hat Enterprise Linux (RHEL) distribution.
 
@@ -23,11 +23,19 @@ This page contains information on how to install, launch and upgrade Docker Desk
 To install Docker Desktop successfully, you must:
 
 - Meet the [general system requirements](_index.md#general-system-requirements).
-- Have a 64-bit version of either RHEL 8 or RHEL 9.
+- Have a 64-bit version of either RHEL 8, RHEL 9, or RHEL 10.
 
 - If `pass` is not installed, or it can't be installed, you must enable [CodeReady Linux Builder (CRB) repository](https://access.redhat.com/articles/4348511) and [Extra Packages for Enterprise Linux (EPEL)](https://docs.fedoraproject.org/en-US/epel/).
 
    {{< tabs group="os_version" >}}
+   {{< tab name="RHEL 10" >}}
+   ```console
+   $ sudo subscription-manager repos --enable codeready-builder-for-rhel-10-$(arch)-rpms
+   $ sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
+   $ sudo dnf install pass
+   ```
+
+   {{< /tab >}}
    {{< tab name="RHEL 9" >}}
    ```console
    $ sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
@@ -49,6 +57,14 @@ To install Docker Desktop successfully, you must:
 - For a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/). You must also enable EPEL.
 
    {{< tabs group="os_version" >}}
+   {{< tab name="RHEL 10" >}}
+   ```console
+   $ # enable EPEL as described above
+   $ sudo dnf install gnome-shell-extension-appindicator
+   $ sudo gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
+   ```
+
+   {{< /tab >}}
    {{< tab name="RHEL 9" >}}
    ```console
    $ # enable EPEL as described above
@@ -127,7 +143,7 @@ $ sudo dnf install ./docker-desktop-<arch>-rhel.rpm
 
 ## Next steps
 
-- Review [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Review [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopRhelInstall) to see what Docker can offer you.
 - Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.

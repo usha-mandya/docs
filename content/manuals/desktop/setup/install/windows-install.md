@@ -26,7 +26,7 @@ aliases:
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
 > employees OR more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
+> subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopWindowsInstall).
 
 This page provides download links, system requirements, and step-by-step installation instructions for Docker Desktop on Windows.
 
@@ -48,6 +48,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 {{< tab name="WSL 2 backend, x86_64" >}}
 
 - WSL version 2.1.5 or later. To check your version, see [WSL: Verification and setup](#wsl-verification-and-setup)
+- If you intend to use Enhanced Container Isolation, ensure you’re using WSL version 2.6 or later. This is required because ECI depends on a Linux kernel version of at least 6.3.0, and WSL 2.6+ bundles Linux kernel version 6.6.
 - Windows 10 64-bit: Enterprise, Pro, or Education version 22H2 (build 19045).
 - Windows 11 64-bit: Enterprise, Pro, or Education version 23H2 (build 22631) or higher.
 - Turn on the WSL 2 feature on Windows. For detailed instructions, refer to the
@@ -55,7 +56,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 - The following hardware prerequisites are required to successfully run
   WSL 2 on Windows 10 or Windows 11:
   - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
-  - 4GB system RAM
+  - 8GB system RAM
   - Enable hardware virtualization in BIOS/UEFI. For more information, see
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#docker-desktop-fails-due-to-virtualization-not-working).
 
@@ -80,7 +81,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](/manuals
   Hyper-V on Windows 10:
 
   - 64 bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
-  - 4GB system RAM
+  - 8GB system RAM
   - Turn on BIOS/UEFI-level hardware virtualization support in the
     BIOS/UEFI settings. For more information, see
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
@@ -105,7 +106,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](/manuals
 - The following hardware prerequisites are required to successfully run
   WSL 2 on Windows 10 or Windows 11:
   - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
-  - 4GB system RAM
+  - 8GB system RAM
   - Enable hardware virtualization in BIOS/UEFI. For more information, see
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
 
@@ -332,7 +333,7 @@ again when you switch back.
 
 ## Where to go next
 
-- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopWindowsInstall) to see what Docker can offer you.
 - [Get started with Docker](/get-started/introduction/_index.md).
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, and

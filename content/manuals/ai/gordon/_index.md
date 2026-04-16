@@ -1,6 +1,7 @@
 ---
 title: Gordon
-description: AI agent for Docker workflows - execute tasks, debug issues, and
+description:
+  AI assistant for Docker workflows - execute tasks, debug issues, and
   manage containers with intelligent assistance
 weight: 40
 params:
@@ -15,7 +16,7 @@ aliases:
 
 {{< summary-bar feature_name="Gordon" >}}
 
-Gordon is an AI agent that takes action on your Docker workflows. It analyzes
+Gordon is an AI-powered assistant that takes action on your Docker workflows. It analyzes
 your environment, proposes solutions, and executes commands with your
 permission. Available in Docker Desktop and via the `docker ai` CLI command.
 
@@ -41,9 +42,16 @@ Before you begin:
 - Sign in to your Docker account
 
 > [!NOTE]
-> Gordon is enabled by default for Personal, Pro, and Team subscriptions. For
-> Business subscriptions, an administrator must enable Gordon for the
-> organization before users can access it.
+> Gordon is enabled by default for Personal, Pro, and Team subscriptions.
+> Business subscribers must complete two steps before users can access Gordon:
+>
+> 1. Contact Docker Support to activate Gordon for your organization. Docker
+>    will confirm when activation is complete.
+> 2. Once confirmed, an organization administrator must set **Enable Gordon** to
+>    **Enabled** or **Always enabled** in the
+>    [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md).
+>    Do not leave the setting at its default value, as this will not activate
+>    Gordon organization-wide.
 
 ### Quick start
 
@@ -51,7 +59,7 @@ Before you begin:
 {{< tab name="Docker Desktop" >}}
 
 1. Open Docker Desktop.
-2. Select **Ask Gordon** in the sidebar.
+2. Select **Gordon** in the sidebar.
 3. Select your project directory.
 4. Type a question: "What containers are running?"
 
@@ -108,13 +116,3 @@ Image management:
 ```console
 $ docker ai "list my local images and their sizes"
 ```
-
-## Usage and availability
-
-Gordon is available with all Docker subscriptions. Usage limits vary by tier:
-
-- Personal: Baseline usage
-- Pro and Team: 3x more usage than Personal
-- Business: 6x more usage than Personal
-
-For details, see [Usage and limits](./usage-and-limits/).

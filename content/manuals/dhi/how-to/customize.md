@@ -1,14 +1,14 @@
 ---
-title: 'Customize a Docker Hardened Image or chart <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: Customize a Docker Hardened Image or chart
 linkTitle: Customize an image or chart
 weight: 25
-keywords: hardened images, DHI, customize, certificate, artifact, helm chart
+keywords: hardened images, DHI, customize, certificate, artifact, helm chart, terraform, infrastructure as code
 description: Learn how to customize Docker Hardened Images (DHI) and charts.
 ---
 
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 
-When you have a Docker Hardened Images subscription, you can customize Docker
+When you have a DHI Select or DHI Enterprise subscription, you can customize Docker
 Hardened Images (DHI) and charts to suit your specific needs using the Docker
 Hub web interface. For images, this lets you select a base image, add packages,
 add OCI artifacts (such as custom certificates or additional tools), and
@@ -29,9 +29,10 @@ owner must first [mirror](./mirror.md) the DHI repository to your organization
 on Docker Hub. Once the repository is mirrored, any user with access to the
 mirrored DHI repository can create a customized image.
 
-### Create an image customization
+You can create customizations using either the DHI CLI or the Docker Hub web interface.
 
-To customize a Docker Hardened Image, follow these steps:
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 
 1. Sign in to [Docker Hub](https://hub.docker.com).
 1. Select **My Hub**.
@@ -48,12 +49,14 @@ To customize a Docker Hardened Image, follow these steps:
 1. Select the image version you want to customize.
 1. Optional. Add packages.
 
-   1. In the **Packages** drop-down, select the packages you want to add to the
+   1. In the packages drop-down, select the packages you want to add to the
       image.
 
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For example, if you are customizing the Alpine
-      variant of the Python DHI, the list will include all Alpine system
+      selected image variant. For version 3.23 Alpine-based images, these are
+      hardened packages that have been built from source by Docker with
+      cryptographic signatures and full supply chain security. For version 3.22
+      Alpine-based images and Debian-based images, these are standard system
       packages.
 
    1. In the **OCI artifacts** drop-down, first, select the repository that
@@ -126,6 +129,130 @@ To customize a Docker Hardened Image, follow these steps:
    A summary of the customization appears. It may take some time for the image
    to build. Once built, it will appear in the **Tags** tab of the repository,
    and your team members can pull it like any other image.
+
+{{< /tab >}}
+{{< tab name="CLI" >}}
+
+Authenticate with `docker login` using your Docker credentials or a [personal
+access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+permissions. [Organization access tokens
+(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+
+Use the [`docker dhi customization`](/reference/cli/docker/dhi/customization/) command:
+
+```console
+# Prepare a customization scaffold
+$ docker dhi customization prepare golang 1.25 \
+  --org my-org \
+  --destination my-org/dhi-golang \
+  --name "golang with git" \
+  --output my-customization.yaml
+
+# Create a customization
+$ docker dhi customization create my-customization.yaml --org my-org
+
+# List customizations
+$ docker dhi customization list --org my-org
+
+# Filter customizations by name, repository, or source
+$ docker dhi customization list --org my-org --filter git
+$ docker dhi customization list --org my-org --repo dhi-golang
+$ docker dhi customization list --org my-org --source golang
+
+# Get a customization
+$ docker dhi customization get my-org/dhi-golang "golang with git" --org my-org --output my-customization.yaml
+
+# Update a customization
+$ docker dhi customization edit my-customization.yaml --org my-org
+
+# Delete a customization
+$ docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
+
+# Delete without confirmation prompt
+$ docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org --yes
+```
+
+{{< /tab >}}
+{{< tab name="Terraform" >}}
+
+You can manage DHI customizations as infrastructure-as-code using the [DHI
+Terraform
+provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
+If you haven't configured the provider yet, see the Terraform tab in [Mirror a
+repository](./mirror.md) for setup instructions.
+
+Define a `dhi_customization` resource for each customization:
+
+```hcl
+resource "dhi_customization" "golang_with_git" {
+  repository = "dhi-golang"
+  name       = "golang with git"
+
+  contents {
+    packages = ["git", "curl"]
+  }
+
+  platform {
+    os           = "linux"
+    architecture = "amd64"
+  }
+}
+```
+
+The `dhi_customization` resource also supports optional configuration blocks
+for `accounts`, `files`, `labels`, `annotations`, `environment`, `entrypoint`,
+`cmd`, `user`, `workdir`, and `stop_signal`.
+
+Run `terraform apply` to create the customization.
+
+To edit a customization, update the resource configuration and run `terraform
+apply`. To delete a customization, remove the resource and run `terraform apply`.
+
+For the full list of resource attributes, see the [Terraform Registry
+documentation](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs/resources/customization).
+
+> [!NOTE]
+>
+> Monitoring customization builds is not available through the Terraform
+> provider. Use the Docker Hub web interface or the DHI CLI to monitor builds.
+
+{{< /tab >}}
+{{< /tabs >}}
+
+### Monitor customization builds
+
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+
+1. Sign in to [Docker Hub](https://hub.docker.com).
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Customizations** tab.
+
+{{< /tab >}}
+{{< tab name="CLI" >}}
+
+List builds for a customization:
+
+```console
+$ docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org
+```
+
+Get details of a specific build:
+
+```console
+$ docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org
+```
+
+View build logs:
+
+```console
+$ docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ### Create an OCI artifact image for image customization
 

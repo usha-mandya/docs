@@ -6,7 +6,7 @@ weight: 999
 ---
 
 This page provides links to additional resources related to Docker Hardened
-Images (DHI), including blog posts, Docker Hub resources, and GitHub
+Images (DHI), including blog posts, guides, Docker Hub resources, and GitHub
 repositories.
 
 For product information and feature comparison, visit the [Docker Hardened
@@ -19,6 +19,7 @@ features, and announcements:
 
 | Date published | Title |
 |------|-------|
+| March 3, 2026 | [Announcing Docker Hardened System Packages](https://www.docker.com/blog/announcing-docker-hardened-system-packages/) |
 | January 25, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
 | January 24, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
 | December 19, 2025 | [Docker Hardened Images: Security Independently Validated by SRLabs](https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/) |
@@ -29,6 +30,11 @@ features, and announcements:
 | August 6, 2025 | [The Next Evolution of Docker Hardened Images: Customizable, FedRAMP Ready, AI Migration Agent, and Deeper Integrations](https://www.docker.com/blog/the-next-evolution-of-docker-hardened-images/) |
 | August 6, 2025 | [Accelerating FedRAMP Compliance with Docker Hardened Images](https://www.docker.com/blog/fedramp-compliance-with-hardened-images/) |
 | May 19, 2025 | [Introducing Docker Hardened Images: Secure, Minimal, and Ready for Production](https://www.docker.com/blog/introducing-docker-hardened-images/) |
+
+## Guides
+
+For guides that demonstrate how to use Docker Hardened Images in various
+scenarios, see the [guides section filtered by DHI](/guides/?tags=dhi).
 
 ## Docker Hub
 
@@ -54,20 +60,24 @@ organization:
   keys and verification tools
 - [Log](https://github.com/docker-hardened-images/log): Log of references (tag >
   digest) for Docker Hardened Images
+- [dhictl](https://github.com/docker-hardened-images/dhictl): Command-line
+  interface for managing and interacting with Docker Hardened Images
 - [Discussions](https://github.com/orgs/docker-hardened-images/discussions):
   Community forum and product discussions
 
 ## Additional resources
 
 - [Start a free trial](https://hub.docker.com/hardened-images/start-free-trial):
-  Explore DHI Enterprise features including FIPS/STIG variants, customization,
+  Explore DHI Select and Enterprise features including FIPS/STIG variants, customization,
   and SLA-backed support
+- [Support Service Level Agreement](https://docs.docker.com/go/dhi-sla/):
+  Review the SLA commitments for DHI Select and Enterprise subscriptions
 - [Request a demo](https://www.docker.com/products/hardened-images/#getstarted): Get a
-  personalized demo and information about DHI Enterprise subscriptions
+  personalized demo and information about DHI Select and Enterprise subscriptions
 - [Request an image](https://github.com/docker-hardened-images/catalog/issues):
   Submit a request for a specific Docker Hardened Image
 - [Contact Sales](https://www.docker.com/pricing/contact-sales/): Connect with
   Docker sales team for enterprise inquiries
 - [Docker Support](https://www.docker.com/support/): Access support resources
-  for DHI Enterprise customers
+  for DHI Select and Enterprise customers
 

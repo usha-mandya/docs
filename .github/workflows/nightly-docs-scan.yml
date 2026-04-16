@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
         with:
           fetch-depth: 1
 
@@ -36,7 +36,7 @@ jobs:
         run: mkdir -p "${{ github.workspace }}/.cache"
 
       - name: Restore scanner state
-        uses: actions/cache/restore@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
+        uses: actions/cache/restore@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: |
             ${{ github.workspace }}/.cache/scanner-memory.db
@@ -55,7 +55,7 @@ jobs:
           private_key: ${{ secrets.CAGENT_REVIEWER_APP_PRIVATE_KEY }}
 
       - name: Run documentation scan
-        uses: docker/cagent-action@latest
+        uses: docker/cagent-action@3a12dbd0c6cd7dda3d4e05f24f0143c9701456de # latest
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
         with:
@@ -66,7 +66,7 @@ jobs:
           timeout: 1200
 
       - name: Save scanner state
-        uses: actions/cache/save@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
+        uses: actions/cache/save@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         if: always()
         with:
           path: |

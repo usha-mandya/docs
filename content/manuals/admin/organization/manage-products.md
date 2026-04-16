@@ -23,7 +23,7 @@ product, including how to set up and configure them, see the following manuals:
 Access to the Docker products included in your subscription is turned on by
 default for all users. For an overview of products included in your
 subscription, see
-[Docker subscriptions and features](https://www.docker.com/pricing/).
+[Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminManageProducts).
 
 {{< tabs >}}
 {{< tab name="Docker Desktop" >}}
@@ -106,8 +106,7 @@ select **Account**.
 
 > [!NOTE]
 >
-> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [sign
-> up](https://www.docker.com/products/docker-offload/) and subscribe.
+> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [contact sales](https://www.docker.com/products/docker-offload/) and subscribe.
 
 To manage Docker Offload access for your organization, use [Settings
 Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md):

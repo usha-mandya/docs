@@ -30,6 +30,13 @@ cascade:
   - target:
       path: /reference/cli/docker/**
     layout: cli
+  # sbx CLI reference pages use the sbx-cli layout (cobra/doc YAML)
+  - target:
+      path: /reference/cli/sbx
+    layout: sbx-cli
+  - target:
+      path: /reference/cli/sbx/**
+    layout: sbx-cli
 
 # Remove the /manuals prefix for content in the manuals section
 permalinks:
@@ -139,25 +146,29 @@ params:
   # Use `grep` to figure out how they might be used.
 
   # Latest version of the Docker Engine API
-  latest_engine_api_version: "1.53"
+  latest_engine_api_version: "1.54"
   # Latest version of Docker Engine
-  docker_ce_version: "29.2.1"
+  docker_ce_version: "29.4.0"
   # Previous version of the Docker Engine
   # (Used to show e.g., "latest" and "latest"-1 in engine install examples
-  docker_ce_version_prev: "29.2.0"
+  docker_ce_version_prev: "29.3.1"
   # Latest Docker Compose version
-  compose_version: "v5.0.1"
+  compose_version: "v5.1.2"
   # Latest BuildKit version
-  buildkit_version: "0.27.0"
+  buildkit_version: "0.28.0"
   # Latest actions version
-  bake_action_version: "v6"
-  build_push_action_version: "v6"
-  login_action_version: "v3"
-  metadata_action_version: "v5"
-  setup_buildx_action_version: "v3"
-  setup_compose_action_version: "v1"
-  setup_docker_action_version: "v4"
-  setup_qemu_action_version: "v3"
+  bake_action_version: "v7"
+  build_push_action_version: "v7"
+  login_action_version: "v4"
+  metadata_action_version: "v6"
+  setup_buildx_action_version: "v4"
+  setup_compose_action_version: "v2"
+  setup_docker_action_version: "v5"
+  setup_qemu_action_version: "v4"
+  github_builder_version: "v1"
+  # Generic actions
+  checkout_action_version: "v6"
+  cache_action_version: "v5"
 
   # Example runtime/library/os versions
   example_go_version: "1.25"
@@ -167,18 +178,18 @@ params:
 menus:
   # Site header menu
   main:
-  - name: Get started
-    pageRef: /get-started/
-    weight: 1
-  - name: Guides
-    pageRef: /guides/
-    weight: 2
-  - name: Manuals
-    pageRef: /manuals/
-    weight: 3
-  - name: Reference
-    pageRef: /reference/
-    weight: 4
+    - name: Get started
+      pageRef: /get-started/
+      weight: 1
+    - name: Guides
+      pageRef: /guides/
+      weight: 2
+    - name: Manuals
+      pageRef: /manuals/
+      weight: 3
+    - name: Reference
+      pageRef: /reference/
+      weight: 4
 
   # Footer links
   footer:
@@ -196,7 +207,7 @@ menus:
     - url: https://www.docker.com/products/business
       name: Docker Business
       parent: Product offerings
-    - url: https://www.docker.com/pricing/faq
+    - url: https://www.docker.com/pricing?ref=Docs&refAction=DocsFooter
       name: Pricing FAQs
       parent: Product offerings
     - url: https://www.docker.com/partners/programs
@@ -304,7 +315,6 @@ module:
       target: assets/css/highlight-github-dark.css
 
   imports:
-
     # Docker Engine API
     - path: github.com/moby/moby/api
       mounts:
@@ -361,8 +371,8 @@ module:
           files: ["*.yaml"]
 
     # Model CLI
-    - path: github.com/docker/model-runner/cmd/cli
+    - path: github.com/docker/model-runner
       mounts:
-        - source: docs/reference
+        - source: cmd/cli/docs/reference
           target: data/cli/model
           files: ["*.yaml"]

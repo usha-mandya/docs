@@ -17,6 +17,7 @@ aliases:
   - /cloud/ecs-compose-examples/
   - /cloud/ecs-compose-features/
   - /cloud/ecs-integration/
+  - /compose/migrate/
   - /engine/context/aci-integration/
   - /engine/context/ecs-integration/
   - /machine/
@@ -125,9 +126,9 @@ Mirantis Kubernetes Engine or other products offered by Mirantis. Much of the
 technology and features found in Docker EE have been absorbed into the Mirantis
 product line.
 
-> [!NOTE]  
+> [!TIP]  
 > For information about enterprise-level features offered by Docker today,
-> see the [Docker Business subscription](https://www.docker.com/pricing/).
+> see the [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsRetired).
 
 ### Docker Data Center and Docker Trusted Registry
 
@@ -155,7 +156,7 @@ extension was available in early access on the GitHub Marketplace. GitHub
 [deprecated Copilot Extensions](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/)
 which led to the retirement of the Docker for GitHub Copilot extension. If
 you're looking for AI-assisted Docker workflows, explore the Docker MCP Toolkit
-and MCP Catalog, or use Ask Gordon in Docker Desktop and the Docker CLI.
+and MCP Catalog, or use Gordon in Docker Desktop and the Docker CLI.
 
 ### Enhanced Service Account add-ons
 

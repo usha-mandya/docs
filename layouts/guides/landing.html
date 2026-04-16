@@ -41,38 +41,42 @@
       <div class="pl-2"><strong>Tags</strong></div>
       <fieldset class="flex flex-col gap-2">
         {{- range $name, $data := site.Data.tags }}
-          {{- $id := anchorize (fmt.Printf "tag-%s" $name) }}
-          <div class="flex gap-2 pl-2">
-            <input
-              value="{{ $name }}"
-              type="checkbox"
-              id="{{ $id }}"
-              @change="toggleFilter('tags', '{{ $name }}')"
-              :checked="filters['tags'].includes('{{ $name }}')"
-            />
-            <label class="select-none" for="{{ $id }}"
-              >{{ $data.title }}</label
-            >
-          </div>
+          {{- if where $.Pages "Params.tags" "intersect" (slice $name) }}
+            {{- $id := anchorize (fmt.Printf "tag-%s" $name) }}
+            <div class="flex gap-2 pl-2">
+              <input
+                value="{{ $name }}"
+                type="checkbox"
+                id="{{ $id }}"
+                @change="toggleFilter('tags', '{{ $name }}')"
+                :checked="filters['tags'].includes('{{ $name }}')"
+              />
+              <label class="select-none" for="{{ $id }}"
+                >{{ $data.title }}</label
+              >
+            </div>
+          {{- end }}
         {{ end }}
       </fieldset>
       <div class="pl-2"><strong>Languages</strong></div>
       <fieldset class="flex flex-wrap gap-2 pl-2">
         {{- range $name, $data := site.Data.languages }}
-          {{- $id := anchorize (fmt.Printf "lang-%s" $name) }}
-          <button
-            class="border-divider-light dark:border-divider-dark flex gap-1 rounded-full border bg-white px-2 py-1 dark:bg-gray-800"
-            :class="{ 'ring-3-2 ring-3-blue-light-400 dark:ring-3-blue-dark-400': filters['languages'].includes('{{ $name }}') }"
-            @click="toggleFilter('languages', '{{ $name }}')"
-          >
-            <img
-              height="18"
-              width="18"
-              title="{{ $data.title }}"
-              src="{{ $data.icon }}"
-            />
-            <span>{{ $data.title }}</span>
-          </button>
+          {{- if where $.Pages "Params.languages" "intersect" (slice $name) }}
+            {{- $id := anchorize (fmt.Printf "lang-%s" $name) }}
+            <button
+              class="border-divider-light dark:border-divider-dark flex gap-1 rounded-full border bg-white px-2 py-1 dark:bg-gray-800"
+              :class="{ 'ring-3-2 ring-3-blue-light-400 dark:ring-3-blue-dark-400': filters['languages'].includes('{{ $name }}') }"
+              @click="toggleFilter('languages', '{{ $name }}')"
+            >
+              <img
+                height="18"
+                width="18"
+                title="{{ $data.title }}"
+                src="{{ $data.icon }}"
+              />
+              <span>{{ $data.title }}</span>
+            </button>
+          {{- end }}
         {{ end }}
       </fieldset>
     </div>
@@ -240,7 +244,7 @@
   <div
     class="flex items-center justify-between gap-8 text-sm text-gray-400 dark:text-gray-300"
   >
-    <div class="flex flex-wrap gap-2 md:flex-nowrap">
+    <div class="flex flex-wrap gap-2">
       {{- with .Params.languages }}
         {{ partial "guide-languages.html" . }}
       {{- end }}

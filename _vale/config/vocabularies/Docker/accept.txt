@@ -1,11 +1,14 @@
 (?i)[A-Z]{2,}'?s
 jq
+zstd
+Zstandard
 untracked
 ripgrep
 exfiltration
 sandboxing
 Adreno
 Aleksandrov
+Awaitility
 Amazon
 Anchore
 Apple
@@ -34,6 +37,7 @@ Chrome DevTools
 CI
 CI/CD
 Citrix
+classpath
 cli
 CLI
 CloudFront
@@ -46,13 +50,14 @@ CouchDB
 Crowdstrike
 [Cc]ybersecurity
 datacenter
+datasource
 Datadog
 Ddosify
 Debootstrap
 denylist
 deprovisioning
 deserialization
-deserialize
+deserialize[d]?
 Dev
 Dev Environments?
 Dex
@@ -91,9 +96,11 @@ g?libc
 GeoNetwork
 GGUF
 Git
+Gitea
 GitHub
 GitHub Actions
 Google
+Gradle
 Grafana
 Gravatar
 gRPC
@@ -101,6 +108,8 @@ Groq
 Grype
 HyperKit
 inferencing
+initializer
+Initializr
 inotify
 Intel
 Intune
@@ -115,6 +124,7 @@ JetBrains
 JFrog
 JUnit
 Kata
+Keycloak
 Kerberos
 Kiro
 Kitematic
@@ -127,7 +137,9 @@ Laradock
 Laravel
 libseccomp
 Linux
+Liquibase
 LinuxKit
+logback
 Loggly
 Logstash
 lookup
@@ -136,8 +148,10 @@ macOS
 macvlan
 Mail(chimp|gun)
 mfsymlinks
+Micronaut
 Microsoft
 minikube
+misconfiguration
 monorepos?
 musl
 MySQL
@@ -145,6 +159,7 @@ nameserver
 namespaced?
 namespacing
 Neovim
+Npgsql
 netfilter
 netlabel
 netlink
@@ -165,17 +180,21 @@ Paketo
 PAT
 perl
 pgAdmin
+pgx
 PKG
 plaintext
 plist
 pluggable
 Postgres
+psycopg
+pytest
 PowerShell
 Python
 Qualcomm
 Quickview
 rebalance
 reimplement
+reloader
 Rego
 Rekor
 ROCm
@@ -216,14 +235,19 @@ Traefik
 Trivy
 Trixie
 Turtlesim
+typesafe
 Ubuntu
 ufw
+uv
 umask
 uncaptured
 Uncaptured
+unconfigured
 undeterminable
 Unix
+unmarshalling
 unmanaged
+upsert
 Visual Studio Code
 VMware
 vpnkit
@@ -237,7 +261,11 @@ windowsfilter
 WireMock
 workdir
 WORKDIR
+[Ww]orktrees?
+[Pp]assthrough
+[Pp]reconfigured
 Xdebug
+xUnit
 XQuartz
 youki
 Yubikey

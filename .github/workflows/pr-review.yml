@@ -1,3 +1,10 @@
+# Thin wrapper around docker/cagent-action's reusable review workflow.
+# Fork detection, org-membership gating, and review posting are all handled
+# by the reusable workflow, so no additional guards are needed here.
+#
+# Triggers:
+#   issue_comment               — `/review` slash command (works for fork contributors).
+#   pull_request_review_comment — captures feedback for agent learning.
 name: PR Review
 
 on:

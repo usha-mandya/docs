@@ -39,7 +39,7 @@ The following table summarizes typical setups in more detail:
 
 ## How containers connect to the internet
 
-Each Linux container in Docker Desktop runs inside a small virtual network managed by Docker and every container is attached to a Docker-managed network and receives its own internal IP address. You can view and these networks with `docker network ls`, `docker network create`, and `docker network inspect`. They are managed by the [`daemon.json`](/manuals/engine/daemon/_index.md).
+Each Linux container in Docker Desktop runs inside a small virtual network managed by Docker and every container is attached to a Docker-managed network and receives its own internal IP address. You can view and manage these networks with `docker network ls`, `docker network create`, and `docker network inspect`. They are managed by the [`daemon.json`](/manuals/engine/daemon/_index.md).
 
 When a container initiates a network request, for example with `apt-get update` or `docker pull`:
 
