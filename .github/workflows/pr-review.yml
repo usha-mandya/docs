@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   review:
-    uses: docker/cagent-action/.github/workflows/review-pr.yml@latest
+    uses: docker/cagent-action/.github/workflows/review-pr.yml@d98096f432f2aea5091c811852c4da804e60623a # v1.4.1
     secrets: inherit
     with:
       add-prompt-files: STYLE.md,COMPONENTS.md
