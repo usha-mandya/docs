@@ -12,23 +12,22 @@ on:
     types: [created]
   pull_request_review_comment:
     types: [created]
+  pull_request:
+    types: [ready_for_review, opened]
 
 permissions:
   contents: read
 
 jobs:
   review:
-    uses: docker/cagent-action/.github/workflows/review-pr.yml@dba0ca51938c78afb363625363c50582243218d6 # v1.3.1
+    uses: docker/cagent-action/.github/workflows/review-pr.yml@d98096f432f2aea5091c811852c4da804e60623a # v1.4.1
+    # Scoped to the job so other jobs in this workflow aren't over-permissioned
     permissions:
-      contents: read # Read repo files and PR diffs
-      pull-requests: write # Post review comments, approve / request changes
-      issues: write # Create security-incident issues if secrets leak into output
-      checks: write # Show review progress as a check run on the PR
-    secrets:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      CAGENT_ORG_MEMBERSHIP_TOKEN: ${{ secrets.CAGENT_ORG_MEMBERSHIP_TOKEN }}
-      CAGENT_REVIEWER_APP_ID: ${{ secrets.CAGENT_REVIEWER_APP_ID }}
-      CAGENT_REVIEWER_APP_PRIVATE_KEY: ${{ secrets.CAGENT_REVIEWER_APP_PRIVATE_KEY }}
+      contents: read # Read repository files and PR diffs
+      pull-requests: write # Post review comments and approve/request changes
+      issues: write # Create security incident issues if secrets are detected in output
+      checks: write # (Optional) Show review progress as a check run on the PR
+      id-token: write # Required for OIDC authentication to AWS Secrets Manager
     with:
       add-prompt-files: STYLE.md,COMPONENTS.md
       additional-prompt: |
