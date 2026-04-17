@@ -62,7 +62,9 @@ Get details of a specific image, including available tags and CVE counts:
 docker dhi catalog get <image-name>
 ```
 
-### Mirror DHI images {tier="DHI Select & DHI Enterprise"}
+### Mirror DHI images
+
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 
 Start mirroring one or more DHI images to your Docker Hub organization:
 
@@ -107,7 +109,9 @@ docker dhi mirror stop dhi-golang --org my-org --delete
 docker dhi mirror stop dhi-golang --org my-org --delete --force
 ```
 
-### Customize DHI images {tier="DHI Select & DHI Enterprise"}
+### Customize DHI images
+
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 
 The CLI can be used to create and manage DHI image customizations. For detailed
 instructions on creating customizations using the GUI, see [Customize a Docker
@@ -150,7 +154,9 @@ docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
 docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org --yes
 ```
 
-### Enterprise package authentication {tier="DHI Enterprise"}
+### Enterprise package authentication
+
+{{< summary-bar feature_name="Docker Hardened Images Enterprise" >}}
 
 Generate authentication credentials for accessing the enterprise hardened
 package repository. This is used when configuring your package manager to
@@ -162,7 +168,9 @@ repository](./hardened-packages.md#enterprise-repository).
 docker dhi auth apk
 ```
 
-### Monitor customization builds {tier="DHI Select & DHI Enterprise"}
+### Monitor customization builds
+
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 
 List builds for a customization:
 

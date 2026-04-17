@@ -116,7 +116,7 @@ advanced security needs.
 For a detailed comparison, see [Docker Hardened Images subscription
 comparison](https://www.docker.com/products/hardened-images/#compare).
 
-### SLA-backed security {tier="DHI Select & DHI Enterprise"}
+### SLA-backed security {tier="DHI Select or DHI Enterprise"}
 
 - CVE remediation SLA: 7-day SLA for critical and high severity vulnerabilities
 - Continuous patching: Regular security updates backed by SLA commitments
@@ -124,12 +124,12 @@ comparison](https://www.docker.com/products/hardened-images/#compare).
 
 For complete details, see the [Support Service Level Agreement](https://docs.docker.com/go/dhi-sla/).
 
-### Compliance variants {tier="DHI Select & DHI Enterprise"}
+### Compliance variants {tier="DHI Select or DHI Enterprise"}
 
 - FIPS-enabled images: For regulated industries and government systems
 - STIG-ready images: Meet DoD Security Technical Implementation Guide requirements
 
-### Customization and control {tier="DHI Select & DHI Enterprise"}
+### Customization and control {tier="DHI Select or DHI Enterprise"}
 
 - Build custom images: Add your own packages, tools, certificates, and configurations
   - DHI Select: Up to 5 customizations

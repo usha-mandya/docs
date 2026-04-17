@@ -204,7 +204,7 @@ migration examples:
 - [Python](../migration/examples/python.md)
 - [Node.js](../migration/examples/node.md)
 
-## Use compliance and ELS variants {tier="DHI Select & Enterprise"}
+## Use compliance and ELS variants
 
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 

@@ -165,6 +165,8 @@ Desktop logs:
   requires: Docker Desktop [4.65](/manuals/desktop/release-notes.md#4650) or later
 Docker Hardened Images:
   subscription: [Docker Hardened Images Select or Enterprise]
+Docker Hardened Images Enterprise:
+  subscription: [Docker Hardened Images Enterprise]
 Docker Init:
   requires: Docker Desktop [4.27](/manuals/desktop/release-notes.md#4270) and later
 Docker Model Runner:
