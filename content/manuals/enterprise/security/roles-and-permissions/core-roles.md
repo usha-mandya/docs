@@ -25,7 +25,7 @@ A company owner has the same organization management permissions as an organizat
 
 ### Content and registry permissions
 
-These permissions apply organization-wide, including all repositories in your organization's namespace.
+These permissions apply organization-wide.
 
 | Permission                                            | Member | Editor | Owner |
 | :---------------------------------------------------- | :----- | :----- | :---- |
@@ -47,11 +47,13 @@ These permissions apply organization-wide, including all repositories in your or
 | View teams                                            | ✅     | ✅     | ✅    |
 | Assign team permissions to repositories               | ❌     | ✅     | ✅    |
 
-When you add members to teams, you can grant additional repository permissions
+You can grant repository permissions to members
 beyond their organization role:
 
-1. Role permissions: Applied organization-wide (member or editor)
-2. Team permissions: Additional permissions for specific repositories
+- Role permissions: Applied organization-wide (member or editor)
+- Team permissions: Additional permissions for specific repositories
+
+To extend access to private repositories, assign a custom role to organization members or configure team permissions.
 
 ### Organization management permissions
 
@@ -79,11 +81,10 @@ beyond their organization role:
 | Upgrade and downgrade plans                                       | ❌     | ❌     | ✅    |
 
 > [!TIP]
-> 
+>
 > If you want more granular access control, you can
 > [upgrade to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsEnterpriseCoreRoles)
 > for custom roles and advanced permissions.
-
 
 _\* If not part of a company_
 
