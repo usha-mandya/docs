@@ -26,7 +26,7 @@ see_also:
     - sbx reset - Reset all sandboxes and clean up state
     - sbx rm - Remove one or more sandboxes
     - sbx run - Run an agent in a sandbox
-    - sbx save - Save a snapshot of the sandbox as a template
     - sbx secret - Manage stored secrets
     - sbx stop - Stop one or more sandboxes without removing them
+    - sbx template - Manage sandbox templates
     - sbx version - Show Docker Sandboxes version information
