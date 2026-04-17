@@ -65,12 +65,37 @@ sandbox instead of on your host.
 > the sandbox. The agent process can read it directly. Only use this for
 > credentials where proxy-based injection isn't available.
 
+Variables in `/etc/sandbox-persistent.sh` are sourced automatically when
+bash runs inside the sandbox, including interactive sessions and agents
+started with `sbx run`. If you run a command directly with
+`sbx exec <name> <command>`, the command runs without a shell, so the
+persistent environment file is not sourced. Wrap the command in `bash -c`
+to load the environment:
+
+```console
+$ sbx exec <sandbox-name> bash -c "your-command"
+```
+
 To verify the variable is set, open a shell in the sandbox:
 
 ```console
 $ sbx exec -it <sandbox-name> bash
 $ echo $BRAVE_API_KEY
 ```
+
+## Why do agents run without approval prompts?
+
+The sandbox itself is the safety boundary. Because agents run inside an
+isolated microVM with [network policies](security/policy.md),
+[credential isolation](security/credentials.md), and no access to your host
+system outside the workspace, the usual reasons for approval prompts (preventing
+destructive commands, network access, file modifications) are handled by the
+sandbox isolation layers instead.
+
+If you prefer to re-enable approval prompts, change the permission mode
+inside the session. Most agents let you switch permission modes after
+startup. In Claude Code, use the `/permissions` command to change the mode
+interactively.
 
 ## How do I know if my agent is running in a sandbox?
 
