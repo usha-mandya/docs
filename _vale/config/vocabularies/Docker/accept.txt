@@ -337,6 +337,7 @@ Zsh
 [Vv]irtualize
 [Ww]alkthrough
 [Tt]oolsets?
+[Rr]eachability
 [Rr]erank(ing|ed)?
 [Ee]vals?
 [Ll]abspaces?
