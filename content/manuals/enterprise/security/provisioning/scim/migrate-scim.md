@@ -5,14 +5,12 @@ description: Learn how to migrate from just-in-time (JIT) to SCIM.
 weight: 30
 ---
 
-## Migrate existing JIT users to SCIM
-
 If you already have users provisioned through Just-in-Time (JIT) and want to
 enable full SCIM lifecycle management, you need to migrate them. Users
 originally created by JIT cannot be automatically de-provisioned through SCIM,
 even after SCIM is enabled.
 
-### Why migrate
+## Why migrate
 
 Organizations using JIT provisioning may encounter limitations with user
 lifecycle management, particularly around de-provisioning. Migrating to SCIM
@@ -35,7 +33,7 @@ provides:
 This migration is most critical for larger organizations that require fully
 automated user de-provisioning when employees leave the company.
 
-### Prerequisites for migration
+## Prerequisites
 
 Before migrating, ensure you have:
 
@@ -48,9 +46,9 @@ Before migrating, ensure you have:
 > migration during a low-usage window and communicate the timeline to affected
 > users.
 
-### Prepare for migration
+## Prepare for migration
 
-#### Transfer ownership
+### Transfer ownership
 
 Before removing users, ensure that any repositories, teams, or organization
 resources they own are transferred to another administrator or service account.
@@ -67,7 +65,7 @@ become inaccessible.
 > become inaccessible when the user is removed. Ensure all critical resources
 > are transferred before proceeding.
 
-#### Verify identity provider configuration
+### Verify identity provider configuration
 
 1. Confirm all JIT-provisioned users are assigned to the Docker application in
    your identity provider.
@@ -77,7 +75,7 @@ become inaccessible.
 Users not assigned to the Docker application in your identity provider are not
 re-created by SCIM after removal.
 
-#### Export user records
+### Export user records
 
 Export a list of JIT-provisioned users from Docker Admin Console:
 
@@ -89,9 +87,9 @@ Export a list of JIT-provisioned users from Docker Admin Console:
 
 Keep this CSV list of JIT-provisioned users as a rollback reference if needed.
 
-### Complete the migration
+## Complete the migration
 
-#### Disable JIT provisioning
+### Disable JIT provisioning
 
 > [!IMPORTANT]
 >
@@ -108,7 +106,7 @@ Keep this CSV list of JIT-provisioned users as a rollback reference if needed.
 Disabling JIT prevents new users from being automatically added through SSO
 during the migration.
 
-#### Remove JIT-origin users
+### Remove JIT-origin users
 
 > [!IMPORTANT]
 >
@@ -132,7 +130,7 @@ user de-provisioning when employees leave the company.
 > SCIM was enabled with the current member list. Users who existed before SCIM
 > was enabled were likely provisioned via JIT.
 
-#### Verify SCIM re-provisioning
+### Verify SCIM re-provisioning
 
 After removing JIT users, SCIM automatically re-creates user accounts:
 
@@ -141,7 +139,7 @@ After removing JIT users, SCIM automatically re-creates user accounts:
 2. In Docker Admin Console, confirm users reappear with SCIM provisioning.
 3. Verify users are added to the correct teams via group mapping.
 
-#### Validate user access
+### Validate user access
 
 Perform post-migration validation:
 
@@ -153,7 +151,7 @@ Perform post-migration validation:
 
 Keep audit exports and logs for compliance purposes.
 
-### Migration results
+## Migration results
 
 After completing the migration:
 
@@ -162,7 +160,7 @@ After completing the migration:
 - No new JIT users are created
 - Consistent identity lifecycle management is maintained
 
-### Troubleshoot migration issues
+## Troubleshoot migration issues
 
 If a user fails to reappear after removal:
 

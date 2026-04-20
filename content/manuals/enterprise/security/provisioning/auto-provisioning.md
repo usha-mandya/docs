@@ -3,7 +3,7 @@ title: Auto-provisioning
 linkTitle: Auto-provision
 description: Auto-provision users by associating members to your organization when email addresses match a verified domain.
 keywords: user provisioning, just-in-time provisioning, JIT, autoprovision, Docker Admin, admin, security
-weight: 10
+weight: 30
 ---
 
 Auto-provisioning automatically adds users to your organization when they sign in with email addresses that match your verified domains. You must verify a domain before enabling auto-provisioning.

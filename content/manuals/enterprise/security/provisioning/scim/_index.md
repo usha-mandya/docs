@@ -1,7 +1,7 @@
 ---
 title: SCIM overview
 linkTitle: SCIM
-weight: 20
+weight: 10
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
 keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
 aliases:

@@ -1,8 +1,13 @@
 ---
 title: Set up SCIM provisioning
-linkTitle: Set up
+linkTitle: Setup
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
 weight: 10
+aliases:
+  - /security/for-admins/scim/
+  - /docker-hub/scim/
+  - /security/for-admins/provisioning/scim/
+  - /enterprise/security/provisioning/scim/
 ---
 
 {{< summary-bar feature_name="SSO" >}}

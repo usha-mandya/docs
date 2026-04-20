@@ -118,8 +118,8 @@ CSV file. For more information on bulk inviting users, see
 
 [Auto-provisioning](/manuals/enterprise/security/provisioning/auto-provisioning.md) uses verified domains to associate organization members with email address that match the verified domains. To override auto-provisioning, you can configure one of the two alternative methods:
 
-* [Just-in-Time (JIT)](/manuals/enterprise/security/provisioning/just-in-time.md) provisioning
-* [System for Cross-domain Identity Management (SCIM)](/manuals/enterprise/security/provisioning/scim/_index.md)
+- [Just-in-Time (JIT)](/manuals/enterprise/security/provisioning/just-in-time.md) provisioning
+- [System for Cross-domain Identity Management (SCIM)](/manuals/enterprise/security/provisioning/scim/_index.md)
 
 ## Delete a domain
 
