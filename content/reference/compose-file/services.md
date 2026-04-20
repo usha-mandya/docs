@@ -1334,6 +1334,9 @@ If either is omitted, Compose automatically generates the environment variable n
 
 `network_mode` sets a service container's network mode.
 
+- `bridge`: Connects the container to Docker's default bridge network instead of
+  a project-specific network. Containers on the default bridge network cannot
+  resolve each other by service name . Instead, use a user-defined network for DNS resolution.
 - `none`: Turns off all container networking.
 - `host`: Gives the container raw access to the host's network interface.
 - `service:{name}`: Gives the container access to the specified container by referring to its service name.
@@ -1342,6 +1345,7 @@ If either is omitted, Compose automatically generates the environment variable n
 For more information container networks, see the [Docker Engine documentation](/manuals/engine/network/_index.md#container-networks).
 
 ```yml
+    network_mode: "bridge"
     network_mode: "host"
     network_mode: "none"
     network_mode: "service:[service name]"
