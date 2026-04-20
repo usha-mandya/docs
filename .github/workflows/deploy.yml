@@ -104,6 +104,15 @@ jobs:
             --include "*.pf_meta" \
             --include "*.pf_fragment"
       -
+        name: Set markdown Content-Type on llms.txt
+        if: ${{ env.DOCS_S3_BUCKET != '' }}
+        run: |
+          aws --region ${{ env.DOCS_AWS_REGION }} s3 cp \
+            s3://${{ env.DOCS_S3_BUCKET }}/llms.txt \
+            s3://${{ env.DOCS_S3_BUCKET }}/llms.txt \
+            --content-type="text/markdown" \
+            --metadata-directive="REPLACE"
+      -
         name: Update Cloudfront config
         if: ${{ env.DOCS_CLOUDFRONT_ID != '' }}
         uses: docker/bake-action@82490499d2e5613fcead7e128237ef0b0ea210f7 # v7
