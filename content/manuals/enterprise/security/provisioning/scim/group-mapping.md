@@ -1,14 +1,15 @@
 ---
 title: Group mapping
-description: Automate team membership by syncing identity provider groups with Docker teams
+description: Automate team membership by syncing identity provider groups with Docker Teams
 keywords: Group Mapping, SCIM, Docker Admin, admin, security, team management, user provisioning, identity provider
 aliases:
 - /admin/company/settings/group-mapping/
 - /admin/organization/security-settings/group-mapping/
 - /docker-hub/group-mapping/
 - /security/for-admins/group-mapping/
-- /security/for-admins/provisioning/group-mapping/
-weight: 30
+- /security/for-admins/provisioning/scim/group-mapping/
+- /enterprise/security/provisioning/group-mapping/
+weight: 20
 ---
 
 {{< summary-bar feature_name="SSO" >}}
@@ -19,7 +20,7 @@ This page explains how group mapping works, and how to set up group mapping.
 
 > [!TIP]
 >
-> Group mapping is ideal for adding users to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, SCIM [user-level attributes](scim.md#set-up-role-mapping) may be a better fit for your needs.
+> Group mapping is ideal for adding users to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, SCIM [user-level attributes](provision-scim.md#set-up-role-mapping) may be a better fit for your needs.
 
 ## Prerequisites
 
@@ -30,7 +31,7 @@ Before you being, you must have:
 
 ## How group mapping works
 
-Group mapping keeps your Docker teams synchronized with your IdP groups through these key components:
+Group mapping keeps your Docker Teams synchronized with your IdP groups through these key components:
 
 - Authentication flow: When users sign in through SSO, your IdP shares user attributes with Docker including email, name, and group memberships.
 - Automatic updates: Docker uses these attributes to create or update user profiles and manage team assignments based on IdP group changes.
@@ -56,7 +57,7 @@ Create groups in your IdP using the format: `organization:team`.
 
 For example:
 
-- For the "developers" team in the "moby" organization: `mobdy:developers`
+- For the "developers" team in the "moby" organization: `moby:developers`
 - For multi-organization access: `moby:backend` and `whale:desktop`
 
 Docker creates teams automatically if they don't already exist when groups sync.
@@ -125,7 +126,7 @@ The next time you sync your groups with Docker, your users will map to the Docke
 
 ## Configure group mapping with SCIM
 
-Use group mapping with SCIM for more advanced user lifecycle management. Before you begin, make sure you [set up SCIM](./scim.md#enable-scim) first.
+Use group mapping with SCIM for more advanced user lifecycle management. Before you begin, make sure you [set up SCIM](./provision-scim.md#enable-scim) first.
 
 {{< tabs >}}
 {{< tab name="Okta" >}}
@@ -190,4 +191,9 @@ Once complete, a user who signs in to Docker through SSO is automatically added 
 
 > [!TIP]
 >
-> [Enable SCIM](scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
+> [Enable SCIM](provision-scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
+
+## Next steps
+
+- [Assign roles](/manuals/enterprise/security/roles-and-permissions/core-roles.md) to members of your org.
+- [Enforce sign in](/manuals/enterprise/security/enforce-sign-in.md), if needed.

@@ -7,18 +7,18 @@ weight: 20
 aliases:
  - /security/for-admins/provisioning/
 grid:
-  - title: "Just-in-Time (JIT) provisioning"
-    description: "Set up automatic user creation on first sign-in. Ideal for smaller teams with minimal setup requirements."
-    icon: "schedule"
-    link: "just-in-time/"
+  - title: "Auto-provisioning"
+    description: "Associate members to an organization when email addresses match a verified domain."
+    icon: "group"
+    link: "scim/group-mapping/"
   - title: "SCIM provisioning"
     description: "Enable continuous user data synchronization between your IdP and Docker. Best for larger organizations."
     icon: "sync"
     link: "scim/"
-  - title: "Group mapping"
-    description: "Configure role-based access control using IdP groups. Perfect for strict access control requirements."
-    icon: "group"
-    link: "group-mapping/"
+  - title: "Just-in-Time (JIT) provisioning"
+    description: "Set up automatic user creation on first sign-in. Ideal for smaller teams with minimal setup requirements."
+    icon: "schedule"
+    link: "just-in-time/"
 ---
 
 {{< summary-bar feature_name="SSO" >}}

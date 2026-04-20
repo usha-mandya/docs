@@ -45,7 +45,7 @@ For more information, see the [SSO documentation](/manuals/enterprise/security/s
 
 ### Automate onboarding with SCIM and JIT provisioning
 
-Streamline user provisioning and role management with [SCIM](/manuals/enterprise/security/provisioning/scim.md) and [Just-in-Time (JIT) provisioning](/manuals/enterprise/security/provisioning/just-in-time.md).
+Streamline user provisioning and role management with [SCIM](/manuals/enterprise/security/provisioning/scim/_index.md) and [Just-in-Time (JIT) provisioning](/manuals/enterprise/security/provisioning/just-in-time.md).
 
 With SCIM you can:
 
@@ -67,4 +67,4 @@ It also:
 - Ensures consistent access control policies.
 - Help you scale permissions as teams grow or change.
 
-For more information on how it works, see [Group mapping](/manuals/enterprise/security/provisioning/group-mapping.md).
+For more information on how it works, see [Group mapping](/manuals/enterprise/security/provisioning/scim/group-mapping.md).

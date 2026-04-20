@@ -33,7 +33,7 @@ providers (IdPs) to access Docker. SSO is available for a whole company and all 
 Business subscription. For more information, see the
 [documentation](/manuals/enterprise/security/single-sign-on/_index.md).
 
-You can also enable [SCIM](/manuals/enterprise/security/provisioning/scim.md)
+You can also enable [SCIM](/manuals/enterprise/security/provisioning/scim/_index.md)
 for further automation of provisioning and deprovisioning of users.
 
 ### Set up Docker product entitlements included in the subscription

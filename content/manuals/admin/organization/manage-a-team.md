@@ -127,5 +127,5 @@ organization.
 
 ## More resources
 
-- [Video: Docker teams](https://youtu.be/WKlT1O-4Du8?feature=shared&t=348)
+- [Video: Docker Teams](https://youtu.be/WKlT1O-4Du8?feature=shared&t=348)
 - [Video: Roles, teams, and repositories](https://youtu.be/WKlT1O-4Du8?feature=shared&t=435)

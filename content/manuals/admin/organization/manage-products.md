@@ -34,7 +34,7 @@ To manage Docker Desktop access:
 
 1. [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
 1. Manage members [manually](./members.md) or use
-[provisioning](/manuals/enterprise/security/provisioning/_index.md).
+   [provisioning](/manuals/enterprise/security/provisioning/_index.md).
 
 With sign-in enforced, only users who are a member of your organization can
 use Docker Desktop after signing in.
@@ -60,7 +60,7 @@ on-screen instructions.
 To manage Docker Build Cloud access:
 
 1. Sign in to [Docker Build Cloud](http://app.docker.com/build) as an
-organization owner.
+   organization owner.
 1. Select **Account settings**.
 1. Select **Lock access to Docker Build Account**.
 
@@ -75,14 +75,14 @@ To initially set up and configure Docker Scout, sign in to
 To manage Docker Scout access:
 
 1. Sign in to [Docker Scout](https://scout.docker.com/) as an organization
-owner.
+   owner.
 1. Select your organization, then **Settings**.
 1. To manage what repositories are enabled for Docker Scout analysis, select
-**Repository settings**. For more information on,
-see [repository settings](../../scout/explore/dashboard.md#repository-settings).
+   **Repository settings**. For more information on,
+   see [repository settings](../../scout/explore/dashboard.md#repository-settings).
 1. To manage access to Docker Scout for use on local images with Docker Desktop,
-use [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md)
-and set `sbomIndexing` to `false` to disable, or to `true` to enable.
+   use [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md)
+   and set `sbomIndexing` to `false` to disable, or to `true` to enable.
 
 {{< /tab >}}
 {{< tab name="Testcontainers Cloud" >}}
@@ -96,7 +96,7 @@ on-screen instructions.
 To manage access to Testcontainers Cloud:
 
 1. Sign in to the [Testcontainers Cloud](https://app.testcontainers.cloud/) and
-select **Account**.
+   select **Account**.
 1. Select **Settings**, then **Lock access to Testcontainers Cloud**.
 
 {{< /tab >}}
@@ -144,7 +144,7 @@ To view usage for Docker products:
 - Docker Scout: View the [**Repository settings** page](https://scout.docker.com/settings/repos) in Docker Scout.
 - Testcontainers Cloud: View the [**Billing** page](https://app.testcontainers.cloud/dashboard/billing) in Testcontainers Cloud.
 - Docker Offload: View the **Offload** > **Offload overview** page in [Docker Home](https://app.docker.com/). For more details, see
-  [Docker Offload usage and billing](/offload/usage/).
+  [Docker Offload usage and billing](/manuals/offload/usage.md).
 
 If your usage or seat count exceeds your subscription amount, you can
 [scale your subscription](../../subscription/scale.md) to meet your needs.
