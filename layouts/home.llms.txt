@@ -3,6 +3,8 @@
 {{- $grouped := $sorted.GroupBy "Section" -}}
 
 # Docker Documentation
+
+> MCP endpoint for structured agent access: https://mcp-docs.docker.com/mcp
 {{- range $grouped }}
 
 ## {{ humanize .Key }}
