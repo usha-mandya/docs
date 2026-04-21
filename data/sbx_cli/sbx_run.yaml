@@ -8,7 +8,7 @@ description: |-
 
     To create a sandbox without attaching, use "sbx create" instead.
 
-    Available agents: claude, codex, copilot, docker-agent, gemini, kiro, opencode, shell
+    Available agents: claude, codex, copilot, docker-agent, droid, gemini, kiro, opencode, shell
 usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
 options:
     - name: branch
