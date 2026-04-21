@@ -264,7 +264,6 @@ SOCKS5 proxy support:
 SSO:
   subscription: [Business]
   for: Administrators
-  requires: Docker Desktop
 Synchronized file sharing:
   subscription: [Pro, Team, Business]
 USB/IP support:
