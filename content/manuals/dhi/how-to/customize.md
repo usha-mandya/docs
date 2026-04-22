@@ -46,7 +46,19 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
    customization process. You can continue with the following steps for more
    details.
 
-1. Select the image version you want to customize.
+1. Select one or more images or Helm charts and versions you want to customize.
+
+   When selecting multiple images and versions, all selections must share the
+   same distribution and distribution version. For example, you can select
+   `dhi-node:22_alpine3.23` and `dhi-python:3.13_alpine3.23` together (both
+   Alpine 3.23), but you cannot mix `dhi-node:22_debian` with Alpine images, or
+   mix different Alpine versions like `alpine3.23` and `alpine3.22`.
+
+   Alternatively, you can select multiple Helm chart versions to apply the same
+   customization to all of them. You cannot mix images and Helm charts in the
+   same customization.
+
+1. Select **Next**.
 1. Optional. Add packages.
 
    1. In the packages drop-down, select the packages you want to add to the
@@ -104,6 +116,11 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 
 1. Select **Next: Configure** to configure the following image settings:
 
+   > [!NOTE]
+   >
+   > When customizing multiple images at once, many of these configuration
+   > options are limited by default and may not be available.
+
    1. Specify the [environment variables](/reference/dockerfile/#env) and their
       values that the image will contain.
    1. Add [labels](/reference/dockerfile/#label) to the image.
@@ -121,6 +138,11 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       customized image's tag. For example, if you specify `custom` when
       customizing the `dhi-python:3.13` image, the customized image will be
       tagged as `dhi-python:3.13_custom`.
+   1. Select the compression format for the image layers. You can choose between
+      **ZSTD** (default) or **GZIP** compression. **ZSTD** typically provides
+      faster image pulls and better compression ratios, but may have
+      compatibility issues with older software. If you need compatibility with
+      older Docker versions, use **GZIP**.
    1. Select the platforms you want to build the image for. You must select at
       least one platform.
 
