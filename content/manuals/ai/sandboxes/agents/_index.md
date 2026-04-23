@@ -18,6 +18,7 @@ Docker Sandboxes runs the following agents out of the box:
 - [Kiro](kiro/)
 - [OpenCode](opencode/)
 - [Docker Agent](docker-agent/)
+- [Shell](shell/) — agent-less sandbox for manual setup or testing
 
 Want to pre-install tools or customize an agent's environment?
-See [Custom environments](custom-environments/).
+See [Customize](../customize/).

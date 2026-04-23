@@ -22,6 +22,10 @@ options:
       shorthand: h
       default_value: "false"
       usage: help for run
+    - name: kit
+      default_value: '[]'
+      usage: |
+        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
     - name: memory
       shorthand: m
       usage: |

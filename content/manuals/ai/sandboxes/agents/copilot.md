@@ -67,5 +67,5 @@ Template: `docker/sandbox-templates:copilot`
 
 Preconfigured to trust the workspace directory and run without approval prompts.
 
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.

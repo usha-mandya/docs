@@ -72,5 +72,5 @@ Template: `docker/sandbox-templates:droid-docker`
 Preconfigured to run without approval prompts. Authentication state is
 persisted across sandbox restarts.
 
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
