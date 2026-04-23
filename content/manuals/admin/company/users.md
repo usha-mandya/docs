@@ -1,5 +1,6 @@
 ---
 title: Manage company members
+linkTitle: Manage users
 description: Learn how to manage company members in the Docker Admin Console.
 keywords: company, company members, members, admin, Admin Console, member management, organization management, company management, bulk invite, resend invites
 ---
@@ -141,4 +142,4 @@ see the [Bulk create invites](https://docs.docker.com/reference/api/hub/latest/#
 ## Manage members on a team
 
 Use Docker Hub to add a member to a team or remove a member from a team. For
-more details, see [Manage members](../organization/members.md#manage-members-on-a-team).
+more details, see [Manage members](../organization/manage/members.md#manage-members-on-a-team).

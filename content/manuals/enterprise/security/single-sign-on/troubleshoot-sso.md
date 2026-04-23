@@ -105,7 +105,7 @@ to re-enable it:
 **Manually invite users**
 
 When JIT is disabled, users are not automatically added to your organization when they authenticate through SSO.
-To manually invite users, see [Invite members](/manuals/admin/organization/members.md#invite-members).
+To manually invite users, see [Invite members](/manuals/admin/organization/manage/members.md#invite-members).
 
 **Configure SCIM provisioning**
 
@@ -166,7 +166,7 @@ Purchase additional Docker Business subscription seats. For details, see [Manage
 
 **Remove users or pending invitations**
 
-Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](/manuals/admin/organization/members.md).
+Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 
 ## Domain is not verified for SSO connection
 

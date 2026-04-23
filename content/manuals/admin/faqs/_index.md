@@ -1,7 +1,7 @@
 ---
 build:
   render: never
-linkTitle: FAQ
-title: Account and admin FAQ
+linkTitle: FAQs
+title: Account and admin FAQs
 weight: 30
 ---

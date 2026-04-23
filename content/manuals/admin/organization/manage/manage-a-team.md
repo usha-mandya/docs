@@ -1,11 +1,13 @@
 ---
 title: Create and manage a team
-weight: 40
+linkTitle: Teams
+weight: 20
 description: Learn how to create and manage teams for your organization
 keywords: docker, registry, teams, organizations, plans, Dockerfile, Docker
   Hub, docs, documentation, repository permissions, configure repository access, team management
 aliases:
-- /docker-hub/manage-a-team/
+  - /docker-hub/manage-a-team/
+  - /admin/organization/manage-a-team/
 ---
 
 {{< summary-bar feature_name="Admin orgs" >}}
@@ -29,11 +31,11 @@ An organization owner is an administrator who has the following permissions:
 
 - Manage repositories and add team members to the organization
 - Access private repositories, all teams, billing information, and
-organization settings
+  organization settings
 - Specify [permissions](#permissions-reference) for each team in the
-organization
+  organization
 - Enable [SSO](/manuals/enterprise/security/single-sign-on/_index.md) for the
-organization
+  organization
 
 When SSO is enabled for your organization, the organization owner can
 also manage users. Docker can auto-provision Docker IDs for new end-users or
@@ -49,14 +51,14 @@ For more information on roles, see
 ## Create a team
 
 1. Sign in to [Docker Home](https://app.docker.com) and select your
-organization.
+   organization.
 1. Select **Teams**.
 
 ## Set team repository permissions
 
 You must create a team before you are able to configure repository permissions.
 For more details, see [Create and manage a
-team](/manuals/admin/organization/manage-a-team.md).
+team](/manuals/admin/organization/manage/manage-a-team.md).
 
 To set team repository permissions:
 
@@ -71,7 +73,6 @@ To set team repository permissions:
 
 1. Select the **Permissions** tab.
 1. Add, modify, or remove a team's repository permissions.
-
    - Add: Specify the **Team**, select the **Permission**, and then select **Add**.
    - Modify: Specify the new permission next to the team.
    - Remove: Select the **Remove permission** icon next to the team.
@@ -79,9 +80,9 @@ To set team repository permissions:
 ### Permissions reference
 
 - `Read-only` access lets users view, search, and pull a private repository
-in the same way as they can a public repository.
+  in the same way as they can a public repository.
 - `Read & Write` access lets users pull, push, and view a repository. In
-addition, it lets users view, cancel, retry or trigger builds.
+  addition, it lets users view, cancel, retry or trigger builds.
 - `Admin` access lets users pull, push, view, edit, and delete a
   repository. You can also edit build settings and update the repository’s
   description, collaborator permissions, public/private visibility, and delete.
@@ -91,25 +92,24 @@ you automatically have "Read-only" permissions.
 
 The following table shows what each permission level allows users to do:
 
-| Action | Read-only | Read & Write | Admin |
-|:------------------:|:---------:|:------------:|:-----:|
-| Pull a Repository | ✅ | ✅ | ✅ |
-| View a Repository | ✅ | ✅ | ✅ |
-| Push a Repository | ❌ | ✅ | ✅ |
-| Edit a Repository | ❌ | ❌ | ✅ |
-| Delete a Repository | ❌ | ❌ | ✅ |
-| Update a Repository Description | ❌ | ❌ | ✅ |
-| View Builds | ✅ | ✅ | ✅ |
-| Cancel Builds | ❌ | ✅ | ✅ |
-| Retry Builds | ❌ | ✅ | ✅ |
-| Trigger Builds | ❌ | ✅ | ✅ |
-| Edit Build Settings | ❌ | ❌ | ✅ |
+|             Action              | Read-only | Read & Write | Admin |
+| :-----------------------------: | :-------: | :----------: | :---: |
+|        Pull a Repository        |    ✅     |      ✅      |  ✅   |
+|        View a Repository        |    ✅     |      ✅      |  ✅   |
+|        Push a Repository        |    ❌     |      ✅      |  ✅   |
+|        Edit a Repository        |    ❌     |      ❌      |  ✅   |
+|       Delete a Repository       |    ❌     |      ❌      |  ✅   |
+| Update a Repository Description |    ❌     |      ❌      |  ✅   |
+|           View Builds           |    ✅     |      ✅      |  ✅   |
+|          Cancel Builds          |    ❌     |      ✅      |  ✅   |
+|          Retry Builds           |    ❌     |      ✅      |  ✅   |
+|         Trigger Builds          |    ❌     |      ✅      |  ✅   |
+|       Edit Build Settings       |    ❌     |      ❌      |  ✅   |
 
 > [!NOTE]
 >
 > A user who hasn't verified their email address only has `Read-only` access to
-the repository, regardless of the rights their team membership has given them.
-
+> the repository, regardless of the rights their team membership has given them.
 
 ## Delete a team
 
@@ -119,7 +119,7 @@ resources. It won't remove users from other teams that they belong to, and it
 won't delete any resources.
 
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Teams**.
 1. Select the **Actions** icon next to the name of the team you want to delete.
 1. Select **Delete team**.

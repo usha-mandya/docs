@@ -13,7 +13,7 @@ params:
     - title: Single sign-on
       url: /security/for-admins/single-sign-on/
     - title: Onboard your organization
-      url: /admin/organization/onboard/
+      url: /admin/organization/setup/onboard/
     - title: Roles and permissions
       url: /security/for-admins/roles-and-permissions/
     - title: Insights

@@ -18,7 +18,7 @@ grid:
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
     icon: explore
-    link: /admin/organization/onboard
+    link: /admin/organization/setup/onboard
   - title: Company FAQ
     description: Discover common questions and answers about companies.
     icon: help

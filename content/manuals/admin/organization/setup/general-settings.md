@@ -1,8 +1,11 @@
 ---
-title: Organization information
-weight: 60
+title: Change general organization information
+linkTitle: Change information
+weight: 30
 description: Learn how to manage settings for organizations using Docker Admin Console.
 keywords: organization, settings, Admin Console, manage, Docker organization, Gravatar, SCIM, SSO setup, domain management, organization settings
+aliases:
+  - /admin/organization/general-settings/
 ---
 
 Learn how to update your organization information using the Admin Console.

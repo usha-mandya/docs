@@ -1,6 +1,6 @@
 ---
-title: Organization administration overview
-linkTitle: Organization administration
+title: Organization overview
+linkTitle: Organization
 weight: 10
 description: Learn how to manage your Docker organization, including teams, members, permissions, and settings.
 keywords: organizations, admin, overview, manage teams, roles
@@ -8,11 +8,11 @@ grid:
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
     icon: explore
-    link: /admin/organization/onboard
+    link: /admin/organization/setup/onboard
   - title: Manage members
     description: Explore how to manage members.
     icon: group_add
-    link: /admin/organization/members/
+    link: /admin/organization/manage/members/
   - title: Activity logs
     description: Learn how to audit the activities of your members.
     icon: text_snippet
@@ -28,7 +28,7 @@ grid:
   - title: Organization settings
     description: Configure information for your organization and manage settings.
     icon: settings
-    link: /admin/organization/general-settings/
+    link: /admin/organization/setup/general-settings/
   - title: SSO and SCIM
     description:
       "Set up [Single Sign-On](/manuals/enterprise/security/single-sign-on/_index.md)

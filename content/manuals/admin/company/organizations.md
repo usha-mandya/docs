@@ -1,5 +1,6 @@
 ---
 title: Manage company organizations
+linkTitle: Manage organizations
 description: Learn how to manage organizations in a company.
 keywords: company, multiple organizations, manage organizations, Docker Admin Console, organization settings, add organization, company management
 ---

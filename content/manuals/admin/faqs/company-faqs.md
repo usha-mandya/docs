@@ -37,7 +37,7 @@ When you first create a company, your account is both a company owner and an
 organization owner. In that case, your account will occupy a seat as long as
 you remain an organization owner.
 
-To avoid occupying a seat, [assign another user as the organization owner](/manuals/admin/organization/members.md#update-a-member-role) and remove yourself from the organization.
+To avoid occupying a seat, [assign another user as the organization owner](/manuals/admin/organization/manage/members.md#update-a-member-role) and remove yourself from the organization.
 You'll retain full administrative access as a company owner without using a
 subscription seat.
 

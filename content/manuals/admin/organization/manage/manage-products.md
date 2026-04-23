@@ -1,8 +1,10 @@
 ---
-title: Manage Docker products
-weight: 45
+title: Docker products
+weight: 30
 description: Learn how to manage access and usage for Docker products for your organization
 keywords: organization, tools, products, product access, organization management
+aliases:
+  - /admin/organization/manage-products/
 ---
 
 {{< summary-bar feature_name="Admin orgs" >}}
@@ -11,12 +13,12 @@ In this section, learn how to manage access and view usage of the Docker
 products for your organization. For more detailed information about each
 product, including how to set up and configure them, see the following manuals:
 
-- [Docker Desktop](../../desktop/_index.md)
-- [Docker Hub](../../docker-hub/_index.md)
-- [Docker Build Cloud](../../build-cloud/_index.md)
-- [Docker Scout](../../scout/_index.md)
+- [Docker Desktop](../../../desktop/_index.md)
+- [Docker Hub](../../../docker-hub/_index.md)
+- [Docker Build Cloud](../../../build-cloud/_index.md)
+- [Docker Scout](../../../scout/_index.md)
 - [Testcontainers Cloud](https://testcontainers.com/cloud/docs/#getting-started)
-- [Docker Offload](../../offload/_index.md)
+- [Docker Offload](../../../offload/_index.md)
 
 ## Manage product access for your organization
 
@@ -79,7 +81,7 @@ To manage Docker Scout access:
 1. Select your organization, then **Settings**.
 1. To manage what repositories are enabled for Docker Scout analysis, select
    **Repository settings**. For more information on,
-   see [repository settings](../../scout/explore/dashboard.md#repository-settings).
+   see [repository settings](../../../scout/explore/dashboard.md#repository-settings).
 1. To manage access to Docker Scout for use on local images with Docker Desktop,
    use [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md)
    and set `sbomIndexing` to `false` to disable, or to `true` to enable.
@@ -138,7 +140,7 @@ reference](/manuals/enterprise/security/hardened-desktop/settings-management/set
 
 To view usage for Docker products:
 
-- Docker Desktop: View the **Insights** page in [Docker Home](https://app.docker.com/). For more details, see [Insights](./insights.md).
+- Docker Desktop: View the **Insights** page in [Docker Home](https://app.docker.com/). For more details, see [Insights](../insights.md).
 - Docker Hub: View the [**Usage** page](https://hub.docker.com/usage) in Docker Hub.
 - Docker Build Cloud: View the **Build minutes** page in [Docker Build Cloud](http://app.docker.com/build).
 - Docker Scout: View the [**Repository settings** page](https://scout.docker.com/settings/repos) in Docker Scout.
@@ -147,4 +149,4 @@ To view usage for Docker products:
   [Docker Offload usage and billing](/manuals/offload/usage.md).
 
 If your usage or seat count exceeds your subscription amount, you can
-[scale your subscription](../../subscription/scale.md) to meet your needs.
+[scale your subscription](../../../subscription/scale.md) to meet your needs.

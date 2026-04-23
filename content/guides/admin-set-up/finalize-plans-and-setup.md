@@ -20,7 +20,7 @@ settings, along with your chosen method for [enforcing sign-in](/manuals/enterpr
 ## Manage your organizations
 
 If you have more than one organization, consider either [consolidating them
-into one organization](/manuals/admin/organization/orgs.md) or creating a
+into one organization](/manuals/admin/organization/setup/orgs.md) or creating a
 [Docker company](/manuals/admin/company/_index.md) to manage multiple
 organizations.
 

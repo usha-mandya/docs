@@ -17,7 +17,7 @@ find out how many users have Docker Desktop installed. If your organization
 doesn't use this software, you can run an internal survey
 to find out who is using Docker Desktop.
 
-For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/onboard.md#step-one-identify-your-docker-users).
+For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/setup/onboard.md#step-one-identify-your-docker-users).
 
 ### Do users need to authenticate with Docker before an owner can add them to an organization?
 
@@ -49,7 +49,7 @@ For prerequisites and instructions, see
 Yes. A user invited to an organization will take up one of the provisioned
 seats, even if that user hasn’t accepted their invitation yet.
 
-To manage invites, see [Manage organization members](/manuals/admin/organization/members.md).
+To manage invites, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 
 ### Do organization owners take a seat?
 

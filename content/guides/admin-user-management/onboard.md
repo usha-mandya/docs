@@ -25,7 +25,7 @@ Members are granted controlled access to resources and enjoy enhanced organizati
 - Access to enhanced features: Members benefit from organization-wide perks, such as increased pull limits and access to premium Docker features.
 - Security control: Apply and enforce security settings at an organizational level, reducing risks associated with unmanaged accounts.
 
-For detailed information, see [Manage organization members](/manuals/admin/organization/members.md).
+For detailed information, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 
 ## Future-proof user management
 
