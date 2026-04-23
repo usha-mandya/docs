@@ -106,6 +106,7 @@ Gravatar
 gRPC
 Groq
 Grype
+Gunicorn
 HyperKit
 inferencing
 initializer
