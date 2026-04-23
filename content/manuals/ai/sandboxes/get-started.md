@@ -39,7 +39,7 @@ cleaning up.
 {{< /tab >}}
 {{< tab name="Linux (Ubuntu)" >}}
 
-- Ubuntu 22.04 or later
+- Ubuntu 24.04 or later
 - 64-bit Intel or AMD (x86_64)
 - KVM hardware virtualization supported and enabled by the CPU. If you're
   running inside a VM, nested virtualization must be turned on. Verify that KVM
