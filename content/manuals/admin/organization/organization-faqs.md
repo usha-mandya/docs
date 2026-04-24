@@ -1,13 +1,14 @@
 ---
+title: Organization FAQs
+linkTitle: FAQs
+weight: 60
 description: Organization FAQs
-linkTitle: Organization
-weight: 20
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Admin Console, members, organization management, manage orgs
-title: FAQs on organizations
 tags: [FAQ]
 aliases:
   - /docker-hub/organization-faqs/
   - /faq/admin/organization-faqs/
+  - /admin/faqs/organization-faqs/
 ---
 
 ### How can I see how many active users are in my organization?

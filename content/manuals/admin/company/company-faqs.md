@@ -1,6 +1,6 @@
 ---
-title: FAQs on companies
-linkTitle: Company
+title: Company FAQs
+linkTitle: FAQs
 weight: 30
 description: Company FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, company, administration, company management
@@ -8,6 +8,7 @@ tags: [FAQ]
 aliases:
   - /docker-hub/company-faqs/
   - /faq/admin/company-faqs/
+  - /admin/faqs/company-faqs/
 ---
 
 ### Some of my organizations don’t have a Docker Business subscription. Can I still use a parent company?

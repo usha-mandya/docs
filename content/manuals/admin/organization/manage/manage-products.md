@@ -140,7 +140,7 @@ reference](/manuals/enterprise/security/hardened-desktop/settings-management/set
 
 To view usage for Docker products:
 
-- Docker Desktop: View the **Insights** page in [Docker Home](https://app.docker.com/). For more details, see [Insights](../insights.md).
+- Docker Desktop: View the **Insights** page in [Docker Home](https://app.docker.com/). For more details, see [Insights](../../insights.md).
 - Docker Hub: View the [**Usage** page](https://hub.docker.com/usage) in Docker Hub.
 - Docker Build Cloud: View the **Build minutes** page in [Docker Build Cloud](http://app.docker.com/build).
 - Docker Scout: View the [**Repository settings** page](https://scout.docker.com/settings/repos) in Docker Scout.

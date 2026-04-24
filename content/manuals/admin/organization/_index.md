@@ -16,7 +16,7 @@ grid:
   - title: Activity logs
     description: Learn how to audit the activities of your members.
     icon: text_snippet
-    link: /admin/organization/activity-logs/
+    link: /admin/activity-logs/
   - title: Image Access Management
     description: Control which types of images your developers can pull.
     icon: photo_library
