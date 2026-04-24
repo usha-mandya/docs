@@ -5,6 +5,7 @@
 # Docker Documentation
 
 > MCP endpoint for structured agent access: https://mcp-docs.docker.com/mcp
+> Bulk text corpus for offline indexing: https://docs.docker.com/llms-full.txt
 {{- range $grouped }}
 
 ## {{ humanize .Key }}
