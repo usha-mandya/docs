@@ -1,2 +1,6 @@
-{{- $path := strings.TrimSuffix "/" .RelPermalink -}}
-{{- printf "%s.md" $path | absURL -}}
+{{- if .IsHome -}}
+  {{- absURL "/index.md" -}}
+{{- else -}}
+  {{- $path := strings.TrimSuffix "/" .RelPermalink -}}
+  {{- printf "%s.md" $path | absURL -}}
+{{- end -}}

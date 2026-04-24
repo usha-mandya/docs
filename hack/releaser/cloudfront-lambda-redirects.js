@@ -69,10 +69,9 @@ exports.handler = (event, context, callback) => {
     if (!hasFileExtension) {
         if (wantsMarkdown) {
             // Markdown files are flattened: /path/to/page.md not /path/to/page/index.md.
-            // Homepage has no flattened equivalent, so serve llms.txt as the
-            // agent-oriented markdown index of the site.
+            // The homepage markdown output remains at /index.md.
             const stripped = uri.replace(/\/$/, '');
-            uri = stripped === '' ? '/llms.txt' : stripped + '.md';
+            uri = stripped === '' ? '/index.md' : stripped + '.md';
         } else {
             // HTML uses directory structure with index.html
             if (!uri.endsWith("/")) {
@@ -83,8 +82,8 @@ exports.handler = (event, context, callback) => {
         request.uri = uri;
     } else if (wantsMarkdown && uri.endsWith('/index.html')) {
         // If requesting index.html but wants markdown, use the flattened .md file.
-        // Root index.html has no flattened equivalent, so serve llms.txt instead.
-        uri = uri === '/index.html' ? '/llms.txt' : uri.replace(/\/index\.html$/, '.md');
+        // The homepage markdown output lives at /index.md.
+        uri = uri === '/index.html' ? '/index.md' : uri.replace(/\/index\.html$/, '.md');
         request.uri = uri;
     }
 

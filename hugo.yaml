@@ -114,6 +114,7 @@ outputFormats:
 outputs:
   home:
     - html
+    - markdown
     - redirects
     - metadata
     - robots
