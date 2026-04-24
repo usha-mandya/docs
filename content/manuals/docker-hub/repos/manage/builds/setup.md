@@ -154,7 +154,7 @@ each repository. In [Docker Hub](https://hub.docker.com), select **My Hub** > **
 
 ### Tag and branch builds
 
-You can configure your automated builds so that pushes to specific branches or tags triggers a build.
+You can configure your automated builds so that pushes to specific branches or tags trigger a build.
 
 1. In the **Build Rules** section, select the **plus** icon to add more sources to build.
 
