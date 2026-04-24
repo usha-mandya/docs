@@ -1,0 +1,2 @@
+{{- $path := strings.TrimSuffix "/" .RelPermalink -}}
+{{- printf "%s.md" $path | absURL -}}

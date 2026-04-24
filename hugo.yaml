@@ -102,6 +102,12 @@ outputFormats:
     mediaType: "text/plain"
     notAlternative: true
     permalinkable: false
+  llmsfull:
+    baseName: llms-full
+    isPlainText: true
+    mediaType: "text/plain"
+    notAlternative: true
+    permalinkable: false
 
 # Enable custom output formats
 # (only generate the custom output files once)
@@ -112,6 +118,7 @@ outputs:
     - metadata
     - robots
     - llms
+    - llmsfull
   page:
     - html
     - markdown
