@@ -178,7 +178,7 @@ jobs:
           stale-pr-message: |
             Thanks for the PR. We'd like to make our product docs better, but haven't been able to review all the suggestions. As our docs change often and quickly diverge, we do not have the bandwidth to review and rebase old PRs.
             
-            If the updates are still relevant, please **add a comment** and review our [contribution guidelines](https://docs.docker.com/contribute/overview/) to rebase your PR against the latest version of the docs. This helps our maintainers focus on active contributions. If there's no activity, this PR will be closed in 30 days.
+            If the updates are still relevant, please rebase your PR against the latest version of the docs and **add a comment** when it's ready. This helps our maintainers focus on active contributions. If there's no activity, this PR will be closed in 30 days.
             
             **To remove the stale label:** Comment `/lifecycle active`
             **To freeze (requires write access):** Comment `/lifecycle frozen`
@@ -191,7 +191,7 @@ jobs:
           close-pr-message: |
             Closing this PR as there hasn't been any activity for a long time. 
             
-            If the updates are still relevant, please review our [contribution guidelines](https://docs.docker.com/contribute/overview/) and **create a new PR** against the latest version of our docs.
+            If the updates are still relevant, please review our [contribution guidelines](https://github.com/docker/docs/blob/main/CONTRIBUTING.md) and **create a new PR** against the latest version of our docs.
           
           # Timing configuration NOTE: If you change days-before-issue-close or
           # days-before-pr-close, also update the hardcoded values in the
