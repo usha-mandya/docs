@@ -2,7 +2,7 @@
 title: Troubleshooting
 weight: 60
 description: Resolve common issues when using Docker Sandboxes.
-keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset
+keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset, network policy, git, ssh
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -135,20 +135,46 @@ $ git worktree remove .sbx/<sandbox-name>-worktrees/<branch-name>
 $ git branch -D <branch-name>
 ```
 
-## Signed Git commits
+## Sandbox commits aren't signed
 
-Agents inside a sandbox can't sign commits because signing keys (GPG, SSH)
-aren't available in the sandbox environment. Commits created by an agent are
-unsigned.
+Docker Sandboxes can sign Git commits with SSH keys from your host agent.
+For setup steps, see [Signed commits](usage.md#signed-commits).
 
-If your repository or organization requires signed commits, use one of these
-workarounds:
+If `ssh-add -L` prints `The agent has no identities.`, the sandbox can reach
+the forwarded agent, but the host agent doesn't have a loaded key. Load the
+signing key into your host SSH agent:
 
-- **Commit outside the sandbox.** Let the agent make changes without
-  committing, then commit and sign from your host terminal.
+```console
+$ ssh-add ~/.ssh/id_ed25519
+```
 
-- **Sign after the fact.** Let the agent commit inside the sandbox, then
-  re-sign the commits on your host:
+If commit signing works on the host but fails in a sandbox, check whether Git
+is configured to sign with a host file path such as
+`/Users/me/.ssh/id_ed25519.pub`. The sandbox uses the forwarded SSH agent, not
+the host key file path. Use the inline public key form instead:
+
+```console
+$ git config --global gpg.format ssh
+$ git config --global user.signingkey "key::$(ssh-add -L | head -n 1)"
+```
+
+If Git reports that `ssh-keygen` is missing, use a sandbox template that
+includes OpenSSH client tools.
+
+If `git log --show-signature` reports that `gpg.ssh.allowedSignersFile` needs
+to be configured, Git can't verify the SSH signature locally. This verification
+config isn't required to create signed commits. GitHub uses the SSH signing
+keys configured in your GitHub account to verify commits.
+
+GPG and S/MIME signing keys aren't available inside the sandbox. If your
+repository or organization requires GPG or S/MIME signatures, or if SSH signing
+isn't configured, use one of these workarounds:
+
+- Commit outside the sandbox. Let the agent make changes without committing,
+  then commit and sign from your host terminal.
+
+- Sign after the fact. Let the agent commit inside the sandbox, then re-sign
+  the commits on your host:
 
   ```console
   $ git rebase --exec 'git commit --amend --no-edit -S' origin/main

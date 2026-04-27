@@ -2,7 +2,7 @@
 title: Credentials
 weight: 20
 description: How Docker Sandboxes handle API keys and authentication credentials for sandboxed agents.
-keywords: docker sandboxes, credentials, api keys, authentication, proxy
+keywords: docker sandboxes, credentials, api keys, authentication, proxy, ssh agent, secrets
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -113,6 +113,20 @@ $ echo "$(gh auth token)" | sbx secret set -g github
 
 This is useful for agents that create pull requests, open issues, or interact
 with GitHub APIs on your behalf.
+
+### SSH agent
+
+If your host has an SSH agent and `SSH_AUTH_SOCK` is set, Docker Sandboxes
+forwards the agent into the sandbox and sets `SSH_AUTH_SOCK` there. The
+private keys stay on your host. Processes inside the sandbox can request
+signatures from the forwarded agent, but they can't read or copy the private
+key.
+
+Use SSH agent forwarding for Git operations over SSH and SSH-based commit
+signing. The signing key must be loaded in the host SSH agent for sandboxed
+commit signing to work. Outbound SSH connections are still subject to sandbox
+network policy. For details, see
+[Signed commits](../usage.md#signed-commits).
 
 ## Environment variables
 
