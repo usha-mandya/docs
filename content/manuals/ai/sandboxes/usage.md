@@ -234,6 +234,21 @@ $ sbx run claude ~/project-b
 $ sbx rm <sandbox-name>       # when finished
 ```
 
+## Copying files between host and sandbox
+
+Use [`sbx cp`](/reference/cli/sbx/cp/) to copy files or directories between
+your host and a sandbox. This is useful for one-off files that aren't part of a
+mounted workspace, such as generated output, logs, or setup files.
+
+```console
+$ sbx cp ./config.json my-sandbox:/home/user/
+$ sbx cp my-sandbox:/home/user/output.log ./
+$ sbx cp ./src/ my-sandbox:/home/user/src
+```
+
+One side of the copy must use `SANDBOX:PATH`. Copying directly between two
+sandboxes isn't supported.
+
 ## Installing dependencies and using Docker
 
 Ask the agent to install what's needed — it has sudo access, and installed
