@@ -20,6 +20,9 @@ inherited_options:
       default_value: "false"
       usage: Enable debug logging
 example: |4-
+      # List policies to find the ID or resource to remove
+      sbx policy ls
+
       # Remove a rule by resource
       sbx policy rm network --resource api.example.com
 
