@@ -2,7 +2,7 @@
 title: Usage
 weight: 20
 description: Common patterns for working with sandboxes.
-keywords: docker sandboxes, sbx, usage, run, policy, secrets
+keywords: docker sandboxes, sbx, usage, run, policy, secrets, branches, git, workspaces, ssh
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -148,6 +148,42 @@ worktree. If that happens, commit from the worktree directory before pushing.
 
 See [Workspace trust](security/workspace.md) for security considerations when
 reviewing agent changes.
+
+### Signed commits
+
+Sandboxes can sign Git commits with SSH keys from your host agent. The private
+key stays on your host.
+
+On the host, load the key into your SSH agent:
+
+```console
+$ ssh-add ~/.ssh/id_ed25519
+```
+
+Inside the sandbox, check that the forwarded agent exposes the key:
+
+```console
+$ ssh-add -L
+```
+
+Configure Git globally inside the sandbox to use SSH commit signing. This
+writes to the sandbox user's Git config, not your repository's `.git/config`.
+Use an inline public key instead of a key file path, because host paths such as
+`~/.ssh/id_ed25519.pub` might not exist in the sandbox:
+
+```console
+$ git config --global gpg.format ssh
+$ git config --global user.signingkey "key::$(ssh-add -L | head -n 1)"
+```
+
+Then commit as usual:
+
+```console
+$ git commit -S
+```
+
+For common signing failures, see
+[Sandbox commits aren't signed](troubleshooting.md#sandbox-commits-arent-signed).
 
 #### Cleanup
 
