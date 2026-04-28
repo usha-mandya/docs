@@ -4,6 +4,7 @@ weight: 70
 description: |
   Use Docker Agent in Docker Sandboxes with multi-provider authentication
   supporting OpenAI, Anthropic, and more.
+keywords: docker sandboxes, docker agent, openai, anthropic, sbx
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

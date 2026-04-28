@@ -4,6 +4,7 @@ weight: 10
 description: |
   Use Claude Code in Docker Sandboxes with authentication, configuration, and
   YOLO mode for AI-assisted development.
+keywords: docker sandboxes, claude code, anthropic, ai agent, sbx
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

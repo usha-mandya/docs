@@ -2,6 +2,7 @@
 title: Credentials
 weight: 20
 description: How Docker Sandboxes handle API keys and authentication credentials for sandboxed agents.
+keywords: docker sandboxes, credentials, api keys, authentication, proxy
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

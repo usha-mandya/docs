@@ -187,7 +187,7 @@ Docker Pass:
 Docker Projects:
   availability: Beta
 Docker Sandboxes sbx:
-  availability: Experimental
+  availability: Early Access
 Docker Sandboxes:
   availability: Experimental
   requires: Docker Desktop [4.58](/manuals/desktop/release-notes.md#4580) or later

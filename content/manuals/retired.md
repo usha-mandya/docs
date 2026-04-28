@@ -4,6 +4,7 @@ linkTitle: Deprecated products and features
 description: |
   Explore deprecated and retired Docker features, products, and open source
   projects, including details on transitioned tools and archived initiatives.
+keywords: deprecated, retired, docker products, docker features, legacy
 params:
   sidebar:
     group: Products
@@ -146,6 +147,16 @@ Dev Environments was a feature introduced in Docker Desktop that allowed
 developers to spin up development environments quickly. It was deprecated and removed from Docker Desktop version 4.42 and later. Similar workflows can be achieved through
 Docker Compose or by creating custom configurations tailored to specific
 project requirements.
+
+### Docker Desktop sandboxes
+
+Docker Desktop sandboxes let users run AI coding agents in isolated microVMs
+through the `docker sandbox` command. The Docker Desktop integration is
+deprecated. Use the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md)
+instead.
+
+You can still view the
+[Docker Desktop sandboxes documentation](/manuals/ai/sandboxes/docker-desktop.md).
 
 ### GitHub Copilot extension
 

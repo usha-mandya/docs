@@ -2,6 +2,7 @@
 title: FAQ
 weight: 70
 description: Frequently asked questions about Docker Sandboxes.
+keywords: docker sandboxes, sbx, faq, sign in, telemetry
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -26,7 +27,7 @@ Your Docker account email is only used for authentication, not marketing.
 
 The `sbx` CLI collects basic usage data about CLI invocations:
 
-- Which subcommand you ran
+- Which command you ran
 - Whether it succeeded or failed
 - How long it took
 - If you're signed in, your Docker username is included

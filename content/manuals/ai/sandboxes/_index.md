@@ -1,13 +1,14 @@
 ---
 title: Docker Sandboxes
 description: Run AI coding agents in isolated environments
+keywords: docker sandboxes, sbx, ai agents, sandboxed agents, microVM
 weight: 20
 params:
   sidebar:
     group: AI
     badge:
-      color: violet
-      text: Experimental
+      color: blue
+      text: Early Access
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -76,13 +77,6 @@ the [usage guide](usage.md) for common patterns.
 
 ## Feedback
 
-Docker Sandboxes is experimental and under active development. Your feedback
-shapes what gets built next. If you run into a bug, hit a missing feature, or
-have a suggestion, open an issue at
+Your feedback shapes what gets built next. If you run into a bug, hit a
+missing feature, or have a suggestion, open an issue at
 [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
-
-## Docker Desktop integration
-
-Docker Desktop also includes a [built-in sandbox command](docker-desktop.md)
-(`docker sandbox`) with a subset of features. The `sbx` CLI is recommended for
-most use cases.
