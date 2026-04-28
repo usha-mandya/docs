@@ -2,6 +2,7 @@
 title: Policies
 weight: 30
 description: Configure network access rules for sandboxes.
+keywords: docker sandboxes, policies, network access, allow rules, deny rules
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

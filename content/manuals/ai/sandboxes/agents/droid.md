@@ -3,6 +3,7 @@ title: Droid
 weight: 35
 description: |
   Use Droid in Docker Sandboxes with API key or OAuth authentication.
+keywords: docker sandboxes, droid, factory, ai agent, sbx
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

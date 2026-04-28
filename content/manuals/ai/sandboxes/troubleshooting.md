@@ -2,6 +2,7 @@
 title: Troubleshooting
 weight: 60
 description: Resolve common issues when using Docker Sandboxes.
+keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -78,7 +79,7 @@ $ git clone https://github.com/owner/repo.git
 ## Can't reach a service running on the host
 
 If a request to `127.0.0.1` or a local network IP returns "connection refused"
-from inside a sandbox, the address is not routable from within the sandbox VM.
+from inside a sandbox, the address is not reachable from within the sandbox VM.
 See [Accessing host services from a sandbox](usage.md#accessing-host-services-from-a-sandbox).
 
 ## Docker authentication failure
@@ -106,7 +107,7 @@ configured to use the forward proxy. See
 [Monitoring network activity](security/policy.md#monitoring)
 for details.
 
-## Docker build export fails with "lchown: operation not permitted"
+## Docker build export fails with an ownership error
 
 Running `docker build` with the local exporter (`--output=type=local` or `-o
 <path>`) inside a sandbox fails because the exporter tries to `lchown` output
@@ -218,8 +219,8 @@ If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
 If you've exhausted the steps above and the problem persists, file a GitHub
 issue at [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
 
-To help the Docker team investigate, generate a diagnostics bundle and share
-it when reporting the issue:
+To help Docker investigate, generate a diagnostics bundle and share it when
+reporting the issue:
 
 ```console
 $ sbx diagnose --upload

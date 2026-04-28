@@ -4,6 +4,7 @@ weight: 60
 description: |
   Use OpenCode in Docker Sandboxes with multi-provider authentication and TUI
   interface for AI development.
+keywords: docker sandboxes, opencode, ai agent, authentication, sbx
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

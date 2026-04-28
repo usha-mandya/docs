@@ -2,6 +2,7 @@
 title: Usage
 weight: 20
 description: Common patterns for working with sandboxes.
+keywords: docker sandboxes, sbx, usage, run, policy, secrets
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -303,7 +304,7 @@ A few things to keep in mind:
 Services running on your host are reachable from inside a sandbox using the
 hostname `host.docker.internal`.
 Use this instead of `127.0.0.1` or your machine's local network IP address,
-which are not routable from inside the sandbox.
+which are not reachable from inside the sandbox.
 
 The sandbox proxy translates `host.docker.internal` to `localhost` before
 forwarding the request, so you must add the `localhost` address with the

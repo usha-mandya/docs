@@ -3,6 +3,7 @@ title: Default security posture
 linkTitle: Defaults
 weight: 15
 description: What a sandbox permits and blocks before you change any settings.
+keywords: docker sandboxes, security defaults, network policy, credentials, sbx
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

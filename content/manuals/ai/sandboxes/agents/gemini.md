@@ -4,6 +4,7 @@ weight: 40
 description: |
   Use Google Gemini in Docker Sandboxes with proxy-managed authentication and
   API key configuration.
+keywords: docker sandboxes, gemini, google, ai agent, sbx
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}

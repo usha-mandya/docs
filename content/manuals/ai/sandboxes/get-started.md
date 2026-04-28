@@ -181,7 +181,7 @@ The dashboard shows your sandboxes with live status, lets you attach to
 agents, open shells, and manage network rules from one place. See
 [Interactive mode](usage.md#interactive-mode) for details.
 
-![The sbx interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
+![The interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
 
 ## Use branch mode
 

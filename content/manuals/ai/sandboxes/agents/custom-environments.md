@@ -2,6 +2,7 @@
 title: Custom environments
 weight: 80
 description: Customize agent sandbox environments or use the shell sandbox for manual setup.
+keywords: docker sandboxes, custom environments, templates, shell, sbx
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -104,7 +105,7 @@ environment variable to a size string before starting the sandbox:
 $ DOCKER_SANDBOXES_DOCKER_SIZE=10g sbx run claude
 ```
 
-Use the non-docker variant if you don't need to build or run containers
+Use the non-Docker variant if you don't need to build or run containers
 inside the sandbox and want a lighter, non-privileged environment. Specify
 it explicitly with `--template`:
 

@@ -3,6 +3,7 @@ title: Supported agents
 linkTitle: Agents
 weight: 30
 description: AI coding agents supported by Docker Sandboxes.
+keywords: docker sandboxes, ai agents, claude code, codex, gemini
 ---
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
