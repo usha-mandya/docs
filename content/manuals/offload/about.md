@@ -70,7 +70,7 @@ Docker](https://www.docker.com/pricing/contact-sales/) to explore options.
 ### Session management and idle state
 
 Docker Offload implements session management and idle state policies to ensure
-fair use across all users.
+fair use across all users. For more information, see [Fair use](#fair-use).
 
 Here's how session management works:
 
@@ -91,6 +91,12 @@ Here's how session management works:
 4. After 8 hours of cumulative usage, the periodic prompts become more frequent.
    If you do not respond to a prompt and the idle timeout expires, your session
    ends and any containers, images, or volumes are deleted.
+
+## Fair use
+
+Docker Offload enforces a fair use policy to prevent resource abuse. Fair use is defined as up to 8
+compute hours per named user per day. Usage in excess of this threshold may be
+subject to session management at Docker's discretion.
 
 ## What's next
 
