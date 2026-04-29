@@ -573,22 +573,22 @@ only inside the sandbox — nothing is written to the host.
 
 ## Debugging
 
-When a kit doesn't behave as expected, two commands cover most cases:
+When a kit doesn't behave as expected, start with the network policy log
+and direct inspection inside the sandbox:
 
 - `sbx policy log` shows every outbound request the sandbox proxy saw,
   the rule it matched, and how it was forwarded (`forward-bypass`,
-  `forward`, `block`). It's the primary tool for diagnosing
-  install-time download failures, blocked domains, or unintended TLS
-  interception. It was the diagnostic that surfaced the
-  `serviceDomains`-too-wide install corruption documented in
-  [Build your own agent kit](build-an-agent.md).
+  `forward`, `block`). Use it to diagnose install-time download failures,
+  blocked domains, and unexpected TLS interception. If downloads fail or
+  arrive corrupted after you add `serviceDomains`, check whether the
+  service mapping is too broad. Map only the hosts that need credential
+  injection.
 - `sbx exec <sandbox> -- <cmd>` runs an arbitrary command inside an
   existing sandbox. Useful for inspecting post-install state without
   recreating: `which mytool`, `ls /home/agent/.local/bin/`,
   `cat /home/agent/.config/...`, and so on.
 
-Install and startup command output isn't currently retained after
-sandbox creation — it scrolls past in the `sbx run` / `sbx create`
-output and isn't captured anywhere accessible afterward. For now, the
-two commands listed plus a clean recreate
-(`sbx rm <sandbox> && sbx run …`) are the practical loop.
+Install and startup command output is only emitted during `sbx run` or
+`sbx create`; `sbx` doesn't retain it for later inspection. To repeat
+setup with fresh output, remove and recreate the sandbox:
+`sbx rm <sandbox> && sbx run ...`.
