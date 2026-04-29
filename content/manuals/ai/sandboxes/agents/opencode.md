@@ -97,5 +97,5 @@ Template: `docker/sandbox-templates:opencode`
 OpenCode supports multiple LLM providers with automatic credential injection
 through the sandbox proxy.
 
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.

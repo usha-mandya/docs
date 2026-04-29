@@ -263,8 +263,8 @@ working tree are unaffected.
 - [Usage guide](usage.md) — sandbox management, reconnecting, multiple
   workspaces, port forwarding, and more
 - [Agents](agents/) — supported agents and configuration
-- [Custom environments](agents/custom-environments.md) — build your own sandbox
-  images
+- [Customize](customize/) — build reusable templates or declare capabilities
+  with kits
 - [Credentials](security/credentials.md) — credential storage and management
 - [Workspace trust](security/workspace.md) — review agent changes safely
 - [Policies](security/policy.md) — control outbound access

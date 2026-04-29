@@ -65,8 +65,8 @@ the [usage guide](usage.md) for common patterns.
 ## Learn more
 
 - [Agents](agents/) — supported agents and per-agent configuration
-- [Custom environments](agents/custom-environments.md) — build reusable sandbox
-  images with pre-installed tools
+- [Customize](customize/) — reusable templates and declarative kits for
+  extending or tailoring sandboxes
 - [Architecture](architecture.md) — microVM isolation, workspace mounting,
   networking
 - [Security](security/) — isolation model, credential handling, network

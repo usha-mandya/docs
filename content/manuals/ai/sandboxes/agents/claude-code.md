@@ -69,5 +69,5 @@ for available options.
 
 The sandbox uses `docker/sandbox-templates:claude-code` and launches Claude Code
 with `--dangerously-skip-permissions` by default. See
-[Custom environments](custom-environments.md) to build your own image on
-top of this base.
+[Templates](../customize/templates.md) to build your own image on top of
+this base.

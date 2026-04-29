@@ -72,5 +72,5 @@ Gemini is configured to disable its built-in OAuth flow. Authentication is
 managed through the proxy with API keys. Preconfigured to run without
 approval prompts.
 
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.

@@ -289,8 +289,7 @@ sandboxes isn't supported.
 
 Ask the agent to install what's needed — it has sudo access, and installed
 packages persist for the sandbox's lifetime. For teams or repeated setups,
-[custom templates](agents/custom-environments.md) let you pre-install tools
-into a reusable image.
+see [Customize](customize/) for reusable templates and declarative kits.
 
 Agents can also build Docker images, run containers, and use
 [Compose](https://docs.docker.com/compose/). Everything runs inside the sandbox's private Docker
@@ -378,4 +377,4 @@ While a sandbox exists, installed packages, Docker images, configuration
 changes, and command history all persist across stops and restarts. When you
 remove a sandbox, everything inside is deleted — only your workspace files
 remain on your host. To preserve a configured environment, create a
-[custom template](agents/custom-environments.md).
+[custom template](customize/templates.md).
