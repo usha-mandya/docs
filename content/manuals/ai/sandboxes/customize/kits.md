@@ -7,6 +7,12 @@ weight: 20
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 
+> [!NOTE]
+> Kits are experimental. The kit file format, CLI commands, and experience
+> for creating, loading, and managing kits are subject to change as the
+> feature evolves. Share feedback and bug reports in the
+> [docker/sbx-releases](https://github.com/docker/sbx-releases) repository.
+
 A kit packages a set of capabilities a sandbox can use, such as:
 
 - Tools to install

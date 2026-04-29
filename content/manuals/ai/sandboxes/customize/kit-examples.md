@@ -8,6 +8,12 @@ weight: 25
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 
+> [!NOTE]
+> Kits are experimental. The kit file format, CLI commands, and experience
+> for creating, loading, and managing kits are subject to change as the
+> feature evolves. Share feedback and bug reports in the
+> [docker/sbx-releases](https://github.com/docker/sbx-releases) repository.
+
 Each section below shows one `spec.yaml` snippet that demonstrates a
 single kit pattern. These aren't complete, distributable kits — they're
 small, focused examples you can lift into your own kit. For the full
