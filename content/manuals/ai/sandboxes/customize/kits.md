@@ -7,6 +7,12 @@ weight: 20
 
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 
+> [!NOTE]
+> Kits are experimental. The kit file format, CLI commands, and experience
+> for creating, loading, and managing kits are subject to change as the
+> feature evolves. Share feedback and bug reports in the
+> [docker/sbx-releases](https://github.com/docker/sbx-releases) repository.
+
 A kit packages a set of capabilities a sandbox can use, such as:
 
 - Tools to install
@@ -303,7 +309,7 @@ removed from a running sandbox — remove and recreate it to start clean.
 ### Git repository
 
 ```console
-$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#ref=v0.1.0&dir=code-server"
+$ sbx run claude --kit "git+https://github.com/<owner>/<repo>.git#ref=v0.1.0&dir=code-server"
 ```
 
 - `#ref=<branch|tag|commit>` pins to a specific revision. Defaults to the
@@ -567,22 +573,22 @@ only inside the sandbox — nothing is written to the host.
 
 ## Debugging
 
-When a kit doesn't behave as expected, two commands cover most cases:
+When a kit doesn't behave as expected, start with the network policy log
+and direct inspection inside the sandbox:
 
 - `sbx policy log` shows every outbound request the sandbox proxy saw,
   the rule it matched, and how it was forwarded (`forward-bypass`,
-  `forward`, `block`). It's the primary tool for diagnosing
-  install-time download failures, blocked domains, or unintended TLS
-  interception. It was the diagnostic that surfaced the
-  `serviceDomains`-too-wide install corruption documented in
-  [Build your own agent kit](build-an-agent.md).
+  `forward`, `block`). Use it to diagnose install-time download failures,
+  blocked domains, and unexpected TLS interception. If downloads fail or
+  arrive corrupted after you add `serviceDomains`, check whether the
+  service mapping is too broad. Map only the hosts that need credential
+  injection.
 - `sbx exec <sandbox> -- <cmd>` runs an arbitrary command inside an
   existing sandbox. Useful for inspecting post-install state without
   recreating: `which mytool`, `ls /home/agent/.local/bin/`,
   `cat /home/agent/.config/...`, and so on.
 
-Install and startup command output isn't currently retained after
-sandbox creation — it scrolls past in the `sbx run` / `sbx create`
-output and isn't captured anywhere accessible afterward. For now, the
-two commands listed plus a clean recreate
-(`sbx rm <sandbox> && sbx run …`) are the practical loop.
+Install and startup command output is only emitted during `sbx run` or
+`sbx create`; `sbx` doesn't retain it for later inspection. To repeat
+setup with fresh output, remove and recreate the sandbox:
+`sbx rm <sandbox> && sbx run ...`.
