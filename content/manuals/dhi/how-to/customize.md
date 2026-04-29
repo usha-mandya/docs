@@ -125,7 +125,8 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       values that the image will contain.
    1. Add [labels](/reference/dockerfile/#label) to the image.
    1. Add [annotations](/build/metadata/annotations/) to the image.
-   1. Specify the users to add to the image.
+   1. Specify the users to add to the image. When you add a user, a home
+      directory is automatically created for that user with 0755 permissions.
    1. Specify the user groups to add to the image.
    1. Select which [user](/reference/dockerfile/#user) to run the images as.
    1. Add [`ENTRYPOINT`](/reference/dockerfile/#entrypoint) arguments to the
