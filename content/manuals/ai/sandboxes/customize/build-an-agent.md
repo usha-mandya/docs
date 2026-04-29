@@ -21,10 +21,6 @@ behind a part of the spec, so you can apply the same reasoning to other agents.
 For reference on every field, see the [Kits](kits.md) page. This tutorial
 focuses on the journey.
 
-The finished kit is also published as a runnable sample at
-[docker/sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib/tree/main/amp) —
-useful as a reference while you follow along.
-
 ## Choose a base image
 
 An agent kit needs a container image that satisfies the
@@ -263,13 +259,6 @@ agent argument:
 
 ```console
 $ sbx run --kit ./amp/ amp
-```
-
-The published copy of this kit also runs directly from the contrib
-repo:
-
-```console
-$ sbx run --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=amp" amp
 ```
 
 ## Iterate

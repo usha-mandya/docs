@@ -309,7 +309,7 @@ removed from a running sandbox — remove and recreate it to start clean.
 ### Git repository
 
 ```console
-$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#ref=v0.1.0&dir=code-server"
+$ sbx run claude --kit "git+https://github.com/<owner>/<repo>.git#ref=v0.1.0&dir=code-server"
 ```
 
 - `#ref=<branch|tag|commit>` pins to a specific revision. Defaults to the

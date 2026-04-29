@@ -129,12 +129,6 @@ command can invoke it directly.
 Use `initFiles` instead of a static file whenever the content depends
 on a runtime value. Use a static file otherwise.
 
-> [!TIP]
-> This snippet is lifted from the
-> [code-server kit](https://github.com/docker/sbx-kits-contrib/tree/main/code-server)
-> in the contrib repo, which is also a runnable sample that demonstrates
-> the full pattern.
-
 ## Ship a Claude Code skill
 
 Claude Code reads project-scoped skills from
@@ -229,14 +223,3 @@ $ sbx run claude-safe --kit ./claude-safe
 
 For a step-by-step walkthrough of building a new agent kit from
 scratch, see [Build an agent](build-an-agent.md).
-
-## More examples
-
-These patterns are all drawn from working kits in the
-[sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib)
-repository, which contains each example as a complete, loadable kit.
-Use it to study the full shape of a kit, or load one directly:
-
-```console
-$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=<kit>"
-```
